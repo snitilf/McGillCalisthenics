@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       <Hero />
 
       {/* About Section */}
-      <section className="relative bg-white py-32 -mt-20 z-30">
+      <section className="relative bg-mcgill-rose py-32 -mt-20 z-30">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16">
             

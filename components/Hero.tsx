@@ -25,13 +25,23 @@ const Hero: React.FC = () => {
       </div>
 
       {/* MAIN TYPOGRAPHY */}
-      {/* Centered, spanning across the screen. High Z-index to sit on top of image strip. */}
-      {/* Removed font-bold because MSung HK Bold is naturally bold. Added font-display. */}
-      <div className="relative z-10 text-center mix-blend-normal pointer-events-none">
+      {/* Text overlap effect - text cuts into the image strip */}
+      {/* High Z-index to sit on top of image strip, positioned to overlap */}
+      <div className="relative z-20 text-center pointer-events-none w-full">
         <h1 
-            className="font-display text-mcgill-red leading-[0.85] tracking-tight uppercase"
+            className="font-figtree font-extrabold italic leading-[0.85] tracking-tight uppercase"
             style={{ 
                 fontSize: 'clamp(3rem, 12vw, 10rem)',
+                fontFamily: 'Figtree, sans-serif',
+                fontWeight: 800,
+                fontStyle: 'italic',
+                // Create gradient effect: white in center (over image), red on sides (over rose)
+                // Image is centered: full width on mobile, 35% on md, 30% on lg
+                // Using responsive gradient that adapts to image width
+                background: 'linear-gradient(to right, #C4182D 0%, #C4182D 32.5%, #FFFFFF 35%, #FFFFFF 65%, #C4182D 67.5%, #C4182D 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
             }}
         >
             McGill
