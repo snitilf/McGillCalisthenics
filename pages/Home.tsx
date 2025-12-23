@@ -45,7 +45,7 @@ const Home: React.FC = () => {
                     className={`pb-4 text-xl font-black uppercase tracking-wide transition-all duration-300 relative font-figtree ${
                       activeTab === tab ? 'text-mcgill-red' : 'text-gray-400 hover:text-mcgill-dark'
                     }`}
-                    style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}
+                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                   >
                     {tab === 'about' && 'About Us'}
                     {tab === 'philosophy' && 'Training Philosophy'}
@@ -60,30 +60,30 @@ const Home: React.FC = () => {
               <div className="min-h-[300px]">
                 {activeTab === 'about' && (
                   <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. Whether you are just getting started with your first pull-up or working on complex movements, our club provides a supportive environment to learn, progress, and have fun.
                     </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       We host weekly workshops, events, and friendly challenges. Come meet like-minded athletes, learn proper technique, and build lasting strength—no machines required.
                     </p>
                   </div>
                 )}
                 {activeTab === 'philosophy' && (
                   <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       Every session starts with a thorough full-body warm‑up to prep joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and reduce injury risk.
                     </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       Then we teach specific skills and progressions, breaking them down into clear steps. We build strength with structured workouts that target the exact muscles and movement patterns you need for steady, sustainable progress.
                     </p>
                   </div>
                 )}
                 {activeTab === 'community' && (
                   <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       This club is about lifting each other up. We show up, put in the work, and motivate one another to get better every week. Progress is more fun and sustainable when you have a supportive team behind you.
                     </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 400 }}>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
                       Whether you are trying to unlock your first pull‑up or chasing advanced skills like handstands and levers, you will find partners, accountability, and encouragement here. We train together, celebrate victories, and grow stronger as a community.
                     </p>
                   </div>
@@ -98,9 +98,9 @@ const Home: React.FC = () => {
       {/* CTA Section */}
       <section className="bg-mcgill-red py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-mcgill-rose uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
+          <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-            <button className="bg-mcgill-rose text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
+            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
           </a>
         </div>
         {/* Decorative Lines */}

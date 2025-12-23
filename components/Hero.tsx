@@ -45,9 +45,9 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
-      {/* LEFT SIDE CONTENT: Est Year - changed to white so it's visible */}
+      {/* LEFT SIDE CONTENT: est Year */}
       <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 md:translate-y-[-50px] z-10">
-        <p className="font-display font-bold text-white/60 text-xs md:text-sm tracking-[0.2em] rotate-180" style={{ writingMode: 'vertical-rl' }}>
+        <p className="font-display font-bold text-black/80 text-xs md:text-sm tracking-[0.2em] rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
             © EST. 2024
         </p>
       </div>

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           
-          {/* Left side: Logo + Text */}
+          {/* left side: Logo + Text */}
           <div className="flex items-center gap-6">
              <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
              <div>
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
              </div>
           </div>
 
-          {/* Right side: Connect - now left-aligned internally */}
+          {/* connect - now left-aligned internally */}
           <div className="flex items-center gap-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-mcgill-red">Connect</h4>
             <div className="flex space-x-4">
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><MessageCircle size={20} /></a>
               <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Mail size={20} /></a>
             </div>
-            <span className="text-xs text-gray-400">© 2025</span>
+            <span className="text-xs text-gray-600">© 2025</span>
           </div>
 
         </div>

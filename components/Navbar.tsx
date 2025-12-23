@@ -69,11 +69,13 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) => 
-                    `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide ${
+                    `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide ${
+                      link.label === 'FAQ' ? 'uppercase' : ''
+                    } ${
                       isActive ? 'text-mcgill-red' : ''
                     }`}
                   style={{
-                    fontFamily: 'Figtree, sans-serif',
+                    fontFamily: 'Schibsted Grotesk, sans-serif',
                     fontWeight: 700,
                   }}
                 >
@@ -103,11 +105,13 @@ const Navbar: React.FC = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) => 
-                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide ${
+                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide ${
+                  link.label === 'FAQ' ? 'uppercase' : ''
+                } ${
                   isActive ? 'text-mcgill-red' : ''
                 }`}
               style={{
-                fontFamily: 'Figtree, sans-serif',
+                fontFamily: 'Schibsted Grotesk, sans-serif',
                 fontWeight: 700,
               }}
             >
@@ -118,9 +122,9 @@ const Navbar: React.FC = () => {
           href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide"
+          className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide"
           style={{
-            fontFamily: 'Figtree, sans-serif',
+            fontFamily: 'Schibsted Grotesk, sans-serif',
             fontWeight: 700,
           }}
         >
@@ -142,11 +146,13 @@ const Navbar: React.FC = () => {
               <NavLink
                 to={link.path}
                 className={({ isActive }) => 
-                  `font-figtree font-bold text-3xl text-mcgill-dark uppercase ${
+                  `font-figtree font-bold text-3xl text-mcgill-dark ${
+                    link.label === 'FAQ' ? 'uppercase' : ''
+                  } ${
                     isActive ? 'text-mcgill-red' : ''
                   }`}
                 style={{
-                  fontFamily: 'Figtree, sans-serif',
+                  fontFamily: 'Schibsted Grotesk, sans-serif',
                   fontWeight: 700,
                 }}
                 onClick={() => setMobileMenuOpen(false)}
@@ -161,7 +167,7 @@ const Navbar: React.FC = () => {
                   rel="noopener noreferrer"
                   className="font-figtree font-bold text-3xl text-mcgill-dark uppercase"
                   style={{
-                    fontFamily: 'Figtree, sans-serif',
+                    fontFamily: 'Schibsted Grotesk, sans-serif',
                     fontWeight: 700,
                   }}
                   onClick={() => setMobileMenuOpen(false)}
