@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         <h1 
             className="font-figtree font-extrabold italic leading-[0.85] tracking-tight"
             style={{ 
-                fontSize: 'clamp(3rem, 12vw, 10rem)',
+                fontSize: 'clamp(4rem, 12vw, 12rem)',
                 fontFamily: 'Figtree, sans-serif',
                 fontWeight: 800,
                 fontStyle: 'italic',

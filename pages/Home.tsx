@@ -98,9 +98,9 @@ const Home: React.FC = () => {
       {/* CTA Section */}
       <section className="bg-mcgill-red py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
+          <h2 className="text-4xl md:text-6xl font-black text-mcgill-rose uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey!</button>
+            <button className="bg-mcgill-rose text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
           </a>
         </div>
         {/* Decorative Lines */}
