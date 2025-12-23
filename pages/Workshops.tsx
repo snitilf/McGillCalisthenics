@@ -58,10 +58,6 @@ const Workshops: React.FC = () => {
          </div>
          <div className="container mx-auto px-6 relative z-10">
             <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">Our Workshops.</h1>
-            <div className="flex flex-wrap gap-4 mt-8">
-                <span className="bg-mcgill-red px-4 py-2 font-bold uppercase text-sm tracking-wider">Wednesdays 6:30 PM</span>
-                <span className="border border-white px-4 py-2 font-bold uppercase text-sm tracking-wider">Bassin Peel</span>
-            </div>
          </div>
       </section>
 

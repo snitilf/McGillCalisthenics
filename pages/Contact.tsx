@@ -4,16 +4,16 @@ import { Instagram, Facebook, MessageCircle, Mail, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <section className="bg-mcgill-rose pt-40 pb-20 diagonal-clip-bottom">
+    <div className="min-h-screen bg-mcgill-rose">
+      <section className="bg-mcgill-rose pt-40 pb-6">
         <div className="container mx-auto px-6 text-center">
-           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mcgill-dark mb-4">Get In Touch</h1>
+           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mcgill-red mb-2">Get In Touch</h1>
            <p className="text-xl text-gray-500 max-w-2xl mx-auto">Have questions about membership, workshops, or collaborations?</p>
         </div>
       </section>
 
-      <section className="py-20 container mx-auto px-6">
-        <div className="max-w-2xl mx-auto bg-white -mt-32 relative z-10 shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
+      <section className="py-8 container mx-auto px-6">
+        <div className="max-w-2xl mx-auto bg-white relative z-10 shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
            <div className="p-8 md:p-12">
               <form className="space-y-6">
                  <div>

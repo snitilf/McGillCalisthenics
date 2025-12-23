@@ -37,14 +37,15 @@ const Home: React.FC = () => {
 
             {/* Right Column: Tabs */}
             <div className="lg:w-2/3 pt-0 lg:pt-20">
-              <div className="flex flex-wrap gap-8 border-b-2 border-mcgill-gray mb-12">
+              <div className="flex flex-wrap gap-8 mb-12">
                 {(['about', 'philosophy', 'community'] as const).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-4 text-xl font-bold uppercase tracking-wide transition-all duration-300 relative ${
+                    className={`pb-4 text-xl font-black uppercase tracking-wide transition-all duration-300 relative font-figtree ${
                       activeTab === tab ? 'text-mcgill-red' : 'text-gray-400 hover:text-mcgill-dark'
                     }`}
+                    style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}
                   >
                     {tab === 'about' && 'About Us'}
                     {tab === 'philosophy' && 'Training Philosophy'}
@@ -97,9 +98,9 @@ const Home: React.FC = () => {
       {/* CTA Section */}
       <section className="bg-mcgill-red py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8">Ready to Start?</h2>
+          <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-bold uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300">Follow our journey!</button>
+            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey!</button>
           </a>
         </div>
         {/* Decorative Lines */}
