@@ -6,7 +6,7 @@ const Team: React.FC = () => {
     <div className="min-h-screen bg-mcgill-rose">
       {/* Page Header */}
       <section className="bg-mcgill-rose pt-40 pb-16">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
             style={{ 
@@ -16,12 +16,11 @@ const Team: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-mcgill-dark">Meet The</span>
-            <br />
+            <span className="text-mcgill-dark">Meet The </span>
             <span className="text-mcgill-red">Team</span>
           </h1>
           <p 
-            className="text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
             style={{ 
               fontFamily: 'Schibsted Grotesk, sans-serif', 
               fontWeight: 500 
