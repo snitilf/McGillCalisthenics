@@ -3,41 +3,77 @@ import { TEAM_MEMBERS } from '../constants';
 
 const Team: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-mcgill-rose">
       {/* Page Header */}
-      <section className="bg-mcgill-dark text-white pt-40 pb-24 diagonal-clip relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img src="images/workshops/IMG_9066.jpeg" className="w-full h-full object-cover" />
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">The Executive Team.</h1>
-          <p className="text-xl text-gray-400 max-w-2xl">The students behind the movement. Dedicated to building the calisthenics community at McGill University.</p>
+      <section className="bg-mcgill-rose pt-40 pb-16">
+        <div className="container mx-auto px-6">
+          <h1 
+            className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
+            style={{ 
+              fontSize: 'clamp(3rem, 8vw, 6rem)',
+              fontFamily: 'Figtree, sans-serif',
+              fontWeight: 800,
+              fontStyle: 'italic',
+            }}
+          >
+            <span className="text-mcgill-dark">Meet The</span>
+            <br />
+            <span className="text-mcgill-red">Team</span>
+          </h1>
+          <p 
+            className="text-lg md:text-xl text-gray-700 max-w-2xl leading-relaxed"
+            style={{ 
+              fontFamily: 'Schibsted Grotesk, sans-serif', 
+              fontWeight: 500 
+            }}
+          >
+            The students behind the movement. Dedicated to building the calisthenics community at McGill University.
+          </p>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section className="py-20 container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+      <section className="pb-20 container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {TEAM_MEMBERS.map((member) => (
-            <div key={member.id} className="group relative">
-              {/* Card Background Element */}
-              <div className="absolute top-4 left-4 w-full h-full bg-mcgill-rose -z-10 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            <div 
+              key={member.id} 
+              className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              {/* McGill Red Accent Border Top */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
-              <div className="bg-white border border-gray-100 shadow-xl overflow-hidden h-full flex flex-col transition-transform duration-300 group-hover:-translate-y-2">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                   <div className="absolute inset-0 bg-mcgill-red/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                
-                <div className="p-6 bg-white border-t border-gray-100 relative z-20">
-                  <h3 className="text-2xl font-bold uppercase tracking-tight text-mcgill-dark group-hover:text-mcgill-red transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-500 font-medium tracking-wide text-sm mt-1 uppercase">
+              {/* Portrait Image */}
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Subtle overlay on hover */}
+                <div className="absolute inset-0 bg-mcgill-red/0 group-hover:bg-mcgill-red/5 transition-colors duration-300"></div>
+              </div>
+              
+              {/* Card Content */}
+              <div className="p-6 bg-white">
+                <h3 
+                  className="text-xl md:text-2xl font-figtree font-extrabold tracking-tight text-mcgill-dark mb-2 group-hover:text-mcgill-red transition-colors"
+                  style={{ 
+                    fontFamily: 'Figtree, sans-serif',
+                    fontWeight: 800,
+                  }}
+                >
+                  {member.name}
+                </h3>
+                <div className="flex items-center gap-2">
+                  <div className="h-[2px] w-8 bg-mcgill-red"></div>
+                  <p 
+                    className="text-sm md:text-base text-gray-600 font-medium tracking-wide"
+                    style={{ 
+                      fontFamily: 'Schibsted Grotesk, sans-serif',
+                      fontWeight: 500,
+                    }}
+                  >
                     {member.role}
                   </p>
                 </div>
