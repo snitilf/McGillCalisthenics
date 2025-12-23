@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { SOCIAL_LINKS } from '../constants';
+import Hero from '../components/Hero';
 
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'about' | 'philosophy' | 'community'>('about');
@@ -15,42 +16,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-mcgill-dark text-white">
-        {/* Background Overlay with Geometric Shapes */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-2/3 h-full bg-gray-900 skew-x-12 translate-x-20 opacity-0"></div>
-          <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-gray-800 -skew-x-12 -translate-x-20 opacity-0"></div>
-          
-          {/* Placeholder Image Overlay */}
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <img 
-            src="/images/workshops/IMG_8856.jpeg" 
-            alt="Calisthenics Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-85 mix-blend-overlay"
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-20 pt-20">
-          <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none tracking-tighter mb-8 opacity-80">
-              McGill <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Calisthenics.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10 font-light">
-            Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/workshops">
-                <Button variant="outline">Join the Club</Button>
-              </Link>
-              <Link to="/team">
-                <Button variant="outline">Meet the Team</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-      </section>
+      <Hero />
 
       {/* About Section */}
       <section className="relative bg-white py-32 -mt-20 z-30">

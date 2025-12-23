@@ -1,90 +1,122 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { NAV_ITEMS } from '../constants';
+import { Menu, X, Instagram } from 'lucide-react';
+import { NAV_ITEMS, SOCIAL_LINKS } from '../constants';
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Updated links structure - left side: Team, Workshops, Competitions
+  const leftLinks = NAV_ITEMS.filter(item => 
+    item.path === '/team' || item.path === '/workshops' || item.path === '/competitions'
+  );
+  
+  // Right side: FAQ, Contact, Register
+  const rightLinks = NAV_ITEMS.filter(item => 
+    item.path === '/faq' || item.path === '/contact'
+  );
 
-  useEffect(() => {
-    setIsOpen(false);
+  // Close mobile menu when location changes
+  React.useEffect(() => {
+    setMobileMenuOpen(false);
   }, [location]);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled || isOpen ? 'bg-mcgill-dark/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Spacer to maintain layout */}
-        <div className="w-10"></div>
+    <nav className="fixed top-0 left-0 right-0 z-50 py-8 px-8 md:px-16 flex justify-between items-start pointer-events-none">
+      {/* pointer-events-none on container, auto on children to allow clicking through empty spaces if needed, 
+          though nav usually sits on top. We keep standard block layout for simplicity. 
+      */}
+      
+      {/* Left Side: Socials + Left Nav */}
+      <div className="hidden md:flex items-center gap-12 pointer-events-auto">
+        <div className="flex gap-4 text-mcgill-dark">
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="hover:text-mcgill-red transition-colors">
+              <Instagram size={20} />
+            </a>
+        </div>
+        <div className="flex gap-8">
+            {leftLinks.map((link) => (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) => 
+                    `font-sans font-medium text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide ${
+                      isActive ? 'text-mcgill-red' : ''
+                    }`
+                  }
+                >
+                    {link.label}
+                </NavLink>
+            ))}
+        </div>
+      </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {NAV_ITEMS.map((item) => (
+      {/* Mobile Menu Button (Visible only on small screens) */}
+      <button 
+        className="md:hidden text-mcgill-dark pointer-events-auto"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Right Side: Right Nav */}
+      <div className="hidden md:flex items-center gap-8 pointer-events-auto">
+        {rightLinks.map((link) => (
             <NavLink
-              key={item.path}
-              to={item.path}
+              key={link.path}
+              to={link.path}
               className={({ isActive }) => 
-                `text-sm font-bold uppercase tracking-widest transition-colors duration-300 hover:text-mcgill-red ${
-                  isActive ? 'text-mcgill-red' : 'text-white'
+                `font-sans font-medium text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide ${
+                  isActive ? 'text-mcgill-red' : ''
                 }`
               }
             >
-              {item.label}
+                {link.label}
             </NavLink>
-          ))}
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-sm font-bold uppercase tracking-widest transition-colors duration-300 hover:text-mcgill-red text-white"
-          >
-            Register
-          </a>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-white hover:text-mcgill-red transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
+        ))}
+        <a 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="font-sans font-medium text-mcgill-dark hover:text-mcgill-red transition-colors text-sm uppercase tracking-wide"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          Register
+        </a>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-mcgill-dark border-t border-gray-800 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-screen py-8' : 'max-h-0'}`}>
-        <div className="flex flex-col space-y-4 px-8">
-          {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) => 
-                `text-lg font-bold uppercase tracking-widest ${
-                  isActive ? 'text-mcgill-red' : 'text-white'
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
+      {/* Mobile Overlay */}
+      {mobileMenuOpen && (
+        <div className="absolute top-0 left-0 w-full h-screen bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
+           {NAV_ITEMS.map((link, index) => (
+            <React.Fragment key={link.path}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) => 
+                  `font-display font-bold text-3xl text-mcgill-dark uppercase ${
+                    isActive ? 'text-mcgill-red' : ''
+                  }`
+                }
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+              {/* Insert Register after Competitions (index 3) */}
+              {index === 3 && (
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-display font-bold text-3xl text-mcgill-dark uppercase"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Register
+                </a>
+              )}
+            </React.Fragment>
           ))}
-          <div className="pt-4 border-t border-gray-800">
-             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe..." target="_blank" rel="noopener noreferrer" className="text-lg font-bold uppercase tracking-widest text-white hover:text-mcgill-red transition-colors">Register</a>
-          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
