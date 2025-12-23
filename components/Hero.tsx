@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-mcgill-rose flex justify-center items-center">
+    <section 
+      className="relative w-full overflow-hidden bg-mcgill-dark flex justify-center items-center hero-full-height"
+    >
       
       {/* CENTRAL IMAGE STRIP */}
       {/* Fixed width (approx 30-35%), full height, centered. */}
-      <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%] overflow-hidden z-0 h-full">
+      <div 
+        className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%] overflow-hidden z-0"
+      >
          <img 
             src="/images/mcgillflag.jpg" 
             alt="McGill Calisthenics"
