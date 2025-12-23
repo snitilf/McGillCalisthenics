@@ -2,7 +2,7 @@ import { TeamMember, NavItem, WorkshopTopic } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Our Team', path: '/team' },
+  { label: 'Team', path: '/team' },
   { label: 'Workshops', path: '/workshops' },
   { label: 'Competitions', path: '/competitions' },
   { label: 'FAQ', path: '/faq' },
