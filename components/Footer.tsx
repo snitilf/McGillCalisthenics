@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
              <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
              <div>
                <h3 className="text-xl font-black tracking-tighter mb-0">McGill <span className="text-mcgill-red">Calisthenics</span></h3>
-               <p className="text-gray-600 text-sm max-w-xs">Built Different. A student-led community dedicated to bodyweight training excellence.</p>
+               <p className="text-gray-600 text-sm max-w-sm">Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.</p>
              </div>
           </div>
 

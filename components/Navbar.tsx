@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 md:px-16 flex justify-between items-center pointer-events-none bg-transparent transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-16 flex justify-between items-center pointer-events-none bg-transparent transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) => 
-                    `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide ${
+                    `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
                       link.label === 'FAQ' ? 'uppercase' : ''
                     } ${
                       isActive ? 'text-mcgill-red' : ''
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) => 
-                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide ${
+                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
                   link.label === 'FAQ' ? 'uppercase' : ''
                 } ${
                   isActive ? 'text-mcgill-red' : ''
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
           href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-sm tracking-wide"
+          className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide"
           style={{
             fontFamily: 'Schibsted Grotesk, sans-serif',
             fontWeight: 700,
@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
         {/* Instagram Icon */}
         <div className="flex gap-4 text-mcgill-dark">
             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="hover:text-mcgill-red transition-colors">
-              <Instagram size={20} />
+              <Instagram size={24} />
             </a>
         </div>
       </div>

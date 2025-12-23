@@ -47,11 +47,17 @@ const Hero: React.FC = () => {
 
       {/* LEFT SIDE CONTENT: est Year */}
       <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 md:translate-y-[-50px] z-10">
-        <p className="font-display font-bold text-black/80 text-xs md:text-sm tracking-[0.2em] rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}>
-            © EST. 2024
+        <p className="font-display text-black/80 text-xs md:text-lg leading-relaxed rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+            <span style={{ display: 'inline-block', transform: 'rotate(90deg)' }}>©</span> EST. 2024
         </p>
       </div>
-
+      {/* RIGHT SIDE CONTENT: Tagline */}
+      <div className="absolute right-8 md:right-16 bottom-8 md:bottom-16 z-10 text-left max-w-lg">
+        <p className="text-black/90 text-xs md:text-lg leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+          Built Different.
+          A student-led community dedicated to bodyweight training excellence at McGill University.
+        </p>
+      </div>
     </section>
   );
 };

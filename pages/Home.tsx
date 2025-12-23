@@ -42,10 +42,10 @@ const Home: React.FC = () => {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-4 text-xl font-black uppercase tracking-wide transition-all duration-300 relative font-figtree ${
+                    className={`pb-4 text-xl tracking-wide transition-all duration-300 relative font-figtree ${
                       activeTab === tab ? 'text-mcgill-red' : 'text-gray-400 hover:text-mcgill-dark'
                     }`}
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
                     {tab === 'about' && 'About Us'}
                     {tab === 'philosophy' && 'Training Philosophy'}
