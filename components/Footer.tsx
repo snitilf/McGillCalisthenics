@@ -1,0 +1,36 @@
+import React from 'react';
+import { Instagram, Mail, Facebook, MessageCircle } from 'lucide-react';
+import { SOCIAL_LINKS } from '../constants';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-white text-mcgill-dark py-12 border-t border-gray-200">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+          
+          <div className="flex items-center gap-6 text-center md:text-left">
+             <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
+             <div>
+               <h3 className="text-2xl font-black tracking-tighter mb-2">McGill <span className="text-mcgill-red">Calisthenics</span></h3>
+               <p className="text-gray-500 text-sm max-w-xs">Built Different. A student-led community dedicated to bodyweight training excellence.</p>
+             </div>
+          </div>
+
+          <div className="flex flex-col items-center md:items-end">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-mcgill-red mb-4">Connect</h4>
+            <div className="flex space-x-6">
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Instagram size={20} /></a>
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Facebook size={20} /></a>
+              <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><MessageCircle size={20} /></a>
+              <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Mail size={20} /></a>
+            </div>
+            <p className="mt-4 text-xs text-gray-500">© 2025 McGill Calisthenics Club.</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
