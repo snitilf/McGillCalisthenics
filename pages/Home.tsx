@@ -18,8 +18,8 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* About Section */}
-      <section className="relative bg-mcgill-rose py-32 -mt-20 z-30">
+      {/* About Section - removed negative margin to prevent gap issues */}
+      <section className="relative bg-mcgill-rose py-32 z-30">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16">
             
