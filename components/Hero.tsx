@@ -7,12 +7,13 @@ const Hero: React.FC = () => {
       
       {/* CENTRAL IMAGE STRIP */}
       {/* Fixed width (approx 30-35%), full height, centered. */}
-      <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%] overflow-hidden z-0">
+      <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%] overflow-hidden z-0">
          <img 
             // Random calisthenics/fitness photo
             src="https://images.unsplash.com/photo-1668980248211-8cef16722c5a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop" 
             alt="McGill Calisthenics"
-            className="w-full h-full object-cover"
+            className="w-full h-full"
+            style={{ objectFit: 'fill' }}
          />
          <div className="absolute inset-0 bg-black/10" />
       </div>

@@ -5,7 +5,6 @@ import { NAV_ITEMS, SOCIAL_LINKS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
@@ -31,7 +30,6 @@ const Navbar: React.FC = () => {
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > 100) {
-        setIsScrolled(true);
         // Hide navbar when scrolling down, show when scrolling up
         if (currentScrollY > lastScrollY) {
           setIsVisible(false);
@@ -39,7 +37,6 @@ const Navbar: React.FC = () => {
           setIsVisible(true);
         }
       } else {
-        setIsScrolled(false);
         setIsVisible(true);
       }
       
@@ -52,9 +49,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 md:px-16 flex justify-between items-start pointer-events-none transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 py-4 px-8 md:px-16 flex justify-between items-start pointer-events-none bg-transparent transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}
+      }`}
     >
       {/* pointer-events-none on container, auto on children to allow clicking through empty spaces if needed, 
           though nav usually sits on top. We keep standard block layout for simplicity. 
