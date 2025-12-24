@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* LEFT SIDE CONTENT: est Year */}
-      <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 md:translate-y-[-50px] z-10">
+      <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 md:translate-y-[-120px] z-10">
         <p className="font-display text-black/80 text-xs md:text-lg leading-relaxed rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
             <span style={{ display: 'inline-block', transform: 'rotate(90deg)' }}>©</span> EST. 2024
         </p>
