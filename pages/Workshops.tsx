@@ -50,8 +50,7 @@ const Workshops: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-mcgill-rose">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-topography">      {/* Hero Section */}
       <section className="bg-mcgill-rose pt-32 pb-0">
         <div className="container mx-auto px-6 text-center">
           <h1 
