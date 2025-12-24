@@ -1,7 +1,23 @@
 import React from 'react';
 import { TEAM_MEMBERS } from '../constants';
+import ChromaGrid, { ChromaItem } from '../components/ChromaGrid';
 
 const Team: React.FC = () => {
+  // McGill red color
+  const MCGILL_RED = '#C4182D';
+  
+  // Gradient angles for visual variety
+  const gradientAngles = [145, 180, 210, 165, 195, 225, 135, 240, 120];
+  
+  // Transform TEAM_MEMBERS to ChromaItem format
+  const chromaItems: ChromaItem[] = TEAM_MEMBERS.map((member, index) => ({
+    image: member.image,
+    title: member.name,
+    subtitle: member.role,
+    borderColor: MCGILL_RED,
+    gradient: `linear-gradient(${gradientAngles[index]}deg, ${MCGILL_RED}, #000)`
+  }));
+
   return (
     <div className="min-h-screen bg-mcgill-rose">
       {/* Page Header */}
@@ -33,59 +49,9 @@ const Team: React.FC = () => {
 
       {/* Team Grid */}
       <section className="pb-20 container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {TEAM_MEMBERS.map((member) => (
-            <div 
-              key={member.id} 
-              className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* McGill Red Accent Border Top */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-              
-              {/* Portrait Image */}
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className={`w-full h-full object-cover ${
-                    member.id === '5' 
-                      ? 'scale-150' // Filip: zoomed in, no hover zoom
-                      : '' // Others: normal scale, no hover zoom
-                  }`}
-                  style={
-                    member.id === '5' 
-                      ? { objectPosition: '90% 35%' } // crop position for Filip if needed
-                      : {}
-                  }
-                />
-                {/* Subtle overlay on hover */}
-                <div className="absolute inset-0 bg-mcgill-red/0 group-hover:bg-mcgill-red/5 transition-colors duration-300"></div>
-              </div>
-              
-              {/* Card Content */}
-              <div className="p-6 bg-white">
-                <h3 
-                  className="text-xl md:text-2xl font-figtree font-extrabold tracking-tight text-mcgill-dark mb-2 group-hover:text-mcgill-red transition-colors"
-                  style={{ 
-                    fontFamily: 'Figtree, sans-serif',
-                    fontWeight: 800,
-                  }}
-                >
-                  {member.name}
-                </h3>
-                <p 
-                  className="text-sm md:text-base text-gray-600 font-medium tracking-wide"
-                  style={{ 
-                    fontFamily: 'Schibsted Grotesk, sans-serif',
-                    fontWeight: 600,
-                  }}
-                >
-                  {member.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ChromaGrid 
+          items={chromaItems}
+        />
       </section>
     </div>
   );
