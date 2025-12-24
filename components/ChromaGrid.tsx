@@ -124,11 +124,6 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
               alt={c.title} 
               loading="lazy" 
               className="w-full h-full object-cover rounded-[10px]"
-              style={
-                c.title === 'Filip Snítil' 
-                  ? { objectPosition: '90% 35%' }
-                  : {}
-              }
             />
           </div>
           <footer className="relative z-10 p-3 text-white font-sans flex flex-col">
