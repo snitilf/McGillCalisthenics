@@ -5,7 +5,7 @@ const Team: React.FC = () => {
   return (
     <div className="min-h-screen bg-mcgill-rose">
       {/* Page Header */}
-      <section className="bg-mcgill-rose pt-24 pb-16">
+      <section className="bg-mcgill-rose pt-32 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
@@ -16,8 +16,8 @@ const Team: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-mcgill-red">Meet The </span>
-            <span className="text-mcgill-black">Team</span>
+            <span className="text-mcgill-black">Meet The </span>
+            <span className="text-mcgill-red">Team.</span>
           </h1>
           <p 
             className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
