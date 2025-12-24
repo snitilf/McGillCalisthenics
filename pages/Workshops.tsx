@@ -50,8 +50,12 @@ const Workshops: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-topography">      {/* Hero Section */}
-      <section className="bg-mcgill-rose pt-32 pb-0">
+    <div className="relative min-h-screen">
+      {/* Background layer - fixed to cover full viewport including behind navbar */}
+      <div className="fixed inset-0 bg-topography -z-10"></div>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-0">
         <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
