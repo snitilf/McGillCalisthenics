@@ -5,7 +5,7 @@ const Team: React.FC = () => {
   return (
     <div className="min-h-screen bg-mcgill-rose">
       {/* Page Header */}
-      <section className="bg-mcgill-rose pt-40 pb-16">
+      <section className="bg-mcgill-rose pt-24 pb-16">
         <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
@@ -16,14 +16,14 @@ const Team: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-mcgill-dark">Meet The </span>
-            <span className="text-mcgill-red">Team</span>
+            <span className="text-mcgill-red">Meet The </span>
+            <span className="text-mcgill-black">Team</span>
           </h1>
           <p 
             className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
             style={{ 
               fontFamily: 'Schibsted Grotesk, sans-serif', 
-              fontWeight: 500 
+              fontWeight: 600 
             }}
           >
             The students behind the movement. Dedicated to building the calisthenics community at McGill University.
@@ -47,7 +47,16 @@ const Team: React.FC = () => {
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={`w-full h-full object-cover ${
+                    member.id === '5' 
+                      ? 'scale-150' // Filip: zoomed in, no hover zoom
+                      : '' // Others: normal scale, no hover zoom
+                  }`}
+                  style={
+                    member.id === '5' 
+                      ? { objectPosition: '90% 35%' } // crop position for Filip if needed
+                      : {}
+                  }
                 />
                 {/* Subtle overlay on hover */}
                 <div className="absolute inset-0 bg-mcgill-red/0 group-hover:bg-mcgill-red/5 transition-colors duration-300"></div>
@@ -64,18 +73,15 @@ const Team: React.FC = () => {
                 >
                   {member.name}
                 </h3>
-                <div className="flex items-center gap-2">
-                  <div className="h-[2px] w-8 bg-mcgill-red"></div>
-                  <p 
-                    className="text-sm md:text-base text-gray-600 font-medium tracking-wide"
-                    style={{ 
-                      fontFamily: 'Schibsted Grotesk, sans-serif',
-                      fontWeight: 500,
-                    }}
-                  >
-                    {member.role}
-                  </p>
-                </div>
+                <p 
+                  className="text-sm md:text-base text-gray-600 font-medium tracking-wide"
+                  style={{ 
+                    fontFamily: 'Schibsted Grotesk, sans-serif',
+                    fontWeight: 600,
+                  }}
+                >
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}

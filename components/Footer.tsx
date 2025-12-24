@@ -13,7 +13,15 @@ const Footer: React.FC = () => {
              <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
              <div>
                <h3 className="text-xl font-black tracking-tighter mb-0">McGill <span className="text-mcgill-red">Calisthenics</span></h3>
-               <p className="text-gray-600 text-sm max-w-sm">Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.</p>
+               <p 
+                 className="text-black/90 text-sm max-w-sm leading-relaxed"
+                 style={{ 
+                   fontFamily: 'Schibsted Grotesk, sans-serif', 
+                   fontWeight: 600 
+                 }}
+               >
+                 Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.
+               </p>
              </div>
           </div>
 
@@ -26,7 +34,12 @@ const Footer: React.FC = () => {
               <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><MessageCircle size={20} /></a>
               <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Mail size={20} /></a>
             </div>
-            <span className="text-xs text-gray-600">© 2025</span>
+            <span 
+              className="text-xs text-gray-600"
+              style={{ fontWeight: 600 }}
+            >
+              © 2025
+            </span>
           </div>
 
         </div>
