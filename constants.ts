@@ -63,5 +63,5 @@ export const SOCIAL_LINKS = {
   messenger: 'https://m.me/j/AbZMbapjVfoEO32a/',
   facebook: 'https://www.facebook.com/people/McGill-Calisthenics-Club/61571444662955/',
   whatsapp: 'https://chat.whatsapp.com/LooJj9ridYE6DZN5rSLXFo',
-  email: 'mcgillcalisthenics@outlook.com'
+  email: 'calisthenics.vpcommunications@mcgilleus.ca'
 };

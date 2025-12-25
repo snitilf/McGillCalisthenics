@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       // Show navbar only when at the top of the page (within 100px)
       // Hide navbar when scrolled past 100px, regardless of scroll direction
       // Navbar will only reappear when scrolling back to the top
-      setIsVisible(currentScrollY <= 100);
+      setIsVisible(currentScrollY <= 80);
       
       setLastScrollY(currentScrollY);
     };
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             </NavLink>
           ))}
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide"
