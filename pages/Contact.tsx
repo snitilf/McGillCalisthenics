@@ -8,6 +8,8 @@ const Contact: React.FC = () => {
     e.preventDefault();
     // Here you would typically send the form data to a backend
     setIsSubmitted(true);
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -132,7 +134,7 @@ const Contact: React.FC = () => {
                     className="text-gray-600 leading-relaxed max-w-md mx-auto"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                   >
-                    Thank you for reaching out. We'll get back to you as soon as possible. If this is an urgent request, please ask us to escalate it via Instagram DM.
+                    Thank you for reaching out. We'll get back to you as soon as possible.
                   </p>
                 </div>
               )}
