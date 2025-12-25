@@ -1,7 +1,15 @@
-import React from 'react';
-import { Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Send, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the form data to a backend
+    setIsSubmitted(true);
+  };
+
   return (
     <div className="min-h-screen bg-mcgill-rose">
       {/* Hero Section - Matching FAQ/Team/Workshops style */}
@@ -36,87 +44,110 @@ const Contact: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-8 md:p-10">
-              <form className="space-y-6">
-                <div>
-                  <label 
-                    className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+              {!isSubmitted ? (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div>
+                    <label 
+                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      Full Name
+                    </label>
+                    <input 
+                      type="text" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                      placeholder="Arnold Schwarzenegger" 
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <label 
+                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      Email Address
+                    </label>
+                    <input 
+                      type="email" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                      placeholder="arnold@mail.mcgill.ca" 
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <label 
+                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      Subject
+                    </label>
+                    <input 
+                      type="text" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                      placeholder="Workshop Inquiry" 
+                      required 
+                    />
+                  </div>
+                  <div>
+                    <label 
+                      className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      Message
+                    </label>
+                    <textarea 
+                      rows={5} 
+                      className="w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-lg focus:outline-none focus:border-mcgill-red transition-colors text-base resize-none" 
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                      placeholder="How can we help you?" 
+                      required
+                    ></textarea>
+                  </div>
+                  <button 
+                    type="submit" 
+                    className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
-                    Full Name
-                  </label>
-                  <input 
-                    type="text" 
-                    className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                    placeholder="Arnold Schwarzenegger" 
-                    required 
-                  />
-                </div>
-                <div>
-                  <label 
-                    className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
+                    <span className="inline-flex items-center justify-center">
+                      Send Message <Send className="ml-2 w-4 h-4"/>
+                    </span>
+                  </button>
+                </form>
+              ) : (
+                /* Success Message */
+                <div className="py-12 text-center animate-fade-in">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mcgill-red/10 mb-6">
+                    <CheckCircle className="w-8 h-8 text-mcgill-red" />
+                  </div>
+                  <h2 
+                    className="text-2xl md:text-3xl font-bold text-mcgill-dark mb-4"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
-                    Email Address
-                  </label>
-                  <input 
-                    type="email" 
-                    className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                    Message Sent!
+                  </h2>
+                  <p 
+                    className="text-gray-600 leading-relaxed max-w-md mx-auto"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                    placeholder="arnold@mail.mcgill.ca" 
-                    required 
-                  />
-                </div>
-                <div>
-                  <label 
-                    className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
-                    Subject
-                  </label>
-                  <input 
-                    type="text" 
-                    className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                    placeholder="Workshop Inquiry" 
-                    required 
-                  />
+                    Thank you for reaching out. We'll get back to you as soon as possible. If this is an urgent request, please ask us to escalate it via Instagram DM.
+                  </p>
                 </div>
-                <div>
-                  <label 
-                    className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                  >
-                    Message
-                  </label>
-                  <textarea 
-                    rows={5} 
-                    className="w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-lg focus:outline-none focus:border-mcgill-red transition-colors text-base resize-none" 
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                    placeholder="How can we help you?" 
-                    required
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit" 
-                  className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg"
-                  style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                >
-                  <span className="inline-flex items-center justify-center">
-                    Send Message <Send className="ml-2 w-4 h-4"/>
-                  </span>
-                </button>
-              </form>
+              )}
             </div>
           </div>
 
-          {/* Subtle prompt pointing to footer */}
-          <p 
-            className="text-center text-gray-400 text-sm mt-6"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-          >
-            Prefer social media? Find us below ↓
-          </p>
+          {/* Subtle prompt pointing to footer - only show when form is visible */}
+          {!isSubmitted && (
+            <p 
+              className="text-center text-gray-400 text-sm mt-6"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+            >
+              Prefer social media? Find us below ↓
+            </p>
+          )}
         </div>
       </section>
     </div>
