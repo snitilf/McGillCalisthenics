@@ -29,16 +29,10 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > 100) {
-        // Hide navbar when scrolling down, show when scrolling up
-        if (currentScrollY > lastScrollY) {
-          setIsVisible(false);
-        } else {
-          setIsVisible(true);
-        }
-      } else {
-        setIsVisible(true);
-      }
+      // Show navbar only when at the top of the page (within 100px)
+      // Hide navbar when scrolled past 100px, regardless of scroll direction
+      // Navbar will only reappear when scrolling back to the top
+      setIsVisible(currentScrollY <= 100);
       
       setLastScrollY(currentScrollY);
     };
