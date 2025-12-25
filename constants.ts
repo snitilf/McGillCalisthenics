@@ -37,7 +37,7 @@ export const MANUAL_WORKSHOP_TOPICS: Record<string, string> = {
   '2025-12-10': 'Studying FOR FINALS',
   '2025-12-17': 'More studying',
   '2025-12-24': 'Merry Christmas ya filthy animals',
-  '2025-12-31': 'Noah is fat and doesnt do anything',
+  '2025-12-31': 'I wish I could planche in front of the Christmas tree',
 };
 
 // helper function to get workshop topic on workshops page

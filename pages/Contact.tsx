@@ -1,6 +1,5 @@
 import React from 'react';
-import { SOCIAL_LINKS } from '../constants';
-import { Instagram, Facebook, MessageCircle, Mail, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -33,7 +32,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="pb-8 bg-mcgill-rose">
+      <section className="pb-16 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-8 md:p-10">
@@ -109,49 +108,15 @@ const Contact: React.FC = () => {
                 </button>
               </form>
             </div>
-            
-            {/* Social Links Footer */}
-            <div className="bg-mcgill-red p-6 md:p-8">
-              <h3 
-                className="text-white font-bold uppercase tracking-widest mb-6 text-center text-sm"
-                style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-              >
-                Connect With Us
-              </h3>
-              <div className="flex justify-center gap-6">
-                <a 
-                  href={SOCIAL_LINKS.instagram} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-mcgill-red hover:bg-mcgill-dark hover:text-white transition-all duration-300"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a 
-                  href={SOCIAL_LINKS.messenger} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-mcgill-red hover:bg-mcgill-dark hover:text-white transition-all duration-300"
-                >
-                  <MessageCircle size={20} />
-                </a>
-                <a 
-                  href={SOCIAL_LINKS.facebook} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-mcgill-red hover:bg-mcgill-dark hover:text-white transition-all duration-300"
-                >
-                  <Facebook size={20} />
-                </a>
-                <a 
-                  href={`mailto:${SOCIAL_LINKS.email}`}
-                  className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-mcgill-red hover:bg-mcgill-dark hover:text-white transition-all duration-300"
-                >
-                  <Mail size={20} />
-                </a>
-              </div>
-            </div>
           </div>
+
+          {/* Subtle prompt pointing to footer */}
+          <p 
+            className="text-center text-gray-400 text-sm mt-6"
+            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+          >
+            Prefer social media? Find us below ↓
+          </p>
         </div>
       </section>
     </div>
