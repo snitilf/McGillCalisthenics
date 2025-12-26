@@ -68,14 +68,9 @@ const Competitions: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section - smooth gradient at top for navbar visibility */}
-      <section 
-        className="pt-32 pb-16"
-        style={{
-          background: 'linear-gradient(180deg, #4a151d 0%, #3a1219 15%, #2a0e14 30%, #1a0a0c 50%, #120608 70%, #0f0405 100%)',
-        }}
-      >
+    <div className="min-h-screen bg-mcgill-rose">
+      {/* Hero Section */}
+      <section className="bg-mcgill-rose pt-32 pb-8">
         <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-4"
@@ -86,13 +81,13 @@ const Competitions: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-white">Compete </span>
+            <span className="text-mcgill-dark">Compete </span>
             <span className="text-mcgill-red">Different.</span>
           </h1>
 
           <p 
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-3"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed mb-3"
+            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
           >
             Represent calisthenics as a sport for McGill University.
           </p>
@@ -106,103 +101,49 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* Subdivisions Section */}
-      <section 
-        className="py-5"
-        style={{
-          background: 'linear-gradient(to bottom, #0f0405 0%, #150708 100%)',
-        }}
-      >
+      <section className="py-12 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
-              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
               style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
             >
               Four <span className="text-mcgill-red">Subdivisions.</span>
             </h2>
             <p 
-              className="text-base text-gray-400 max-w-xl mx-auto"
-              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+              className="text-base text-gray-700 max-w-xl mx-auto"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
             >
               Choose your path to excellence. Each subdivision offers unique challenges and specialized coaching.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {subdivisions.map((sub, index) => (
               <div 
                 key={index}
-                className="bg-white/[0.05] border border-white/10 rounded-lg p-6 hover:border-mcgill-red/40 hover:bg-white/[0.08] transition-all duration-300"
+                className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-lg bg-mcgill-red/20 flex items-center justify-center mb-4">
-                  <sub.icon className="w-6 h-6 text-mcgill-red" />
-                </div>
+                {/* McGill Red Accent Border Top */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                 
-                <h3 
-                  className="text-xl font-bold text-white mb-2"
-                  style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                >
-                  {sub.name}
-                </h3>
-                
-                <p 
-                  className="text-sm text-gray-400 leading-relaxed"
-                  style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                >
-                  {sub.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section 
-        className="py-12"
-        style={{
-          background: 'linear-gradient(to bottom, #150708 0%, #1a0a0c 100%)',
-        }}
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 
-              className="text-3xl md:text-4xl font-bold text-white mb-3"
-              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-            >
-              What You <span className="text-mcgill-red">Get.</span>
-            </h2>
-            <p 
-              className="text-base text-gray-400 max-w-xl mx-auto"
-              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-            >
-              Join the team and unlock access to elite training, competition opportunities, and a dedicated community.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index}
-                className="flex gap-4 p-5 rounded-lg bg-white/[0.05] border border-white/10 hover:border-mcgill-red/40 hover:bg-white/[0.08] transition-all duration-300"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-mcgill-red/20 flex items-center justify-center">
-                    <benefit.icon className="w-6 h-6 text-mcgill-red" />
+                <div className="p-6">
+                  <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center mb-4">
+                    <sub.icon className="w-6 h-6 text-mcgill-red" />
                   </div>
-                </div>
-                <div>
+                  
                   <h3 
-                    className="text-lg font-bold text-white mb-1"
+                    className="text-xl font-bold text-mcgill-dark mb-2"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
-                    {benefit.title}
+                    {sub.name}
                   </h3>
+                  
                   <p 
-                    className="text-sm text-gray-400 leading-relaxed"
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                    className="text-sm text-gray-600 leading-relaxed"
+                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
                   >
-                    {benefit.description}
+                    {sub.description}
                   </p>
                 </div>
               </div>
@@ -211,57 +152,111 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* Commitment Section */}
-      <section 
-        className="py-12"
-        style={{
-          background: 'linear-gradient(to bottom, #1a0a0c 0%, #150708 100%)',
-        }}
-      >
+      {/* Benefits Section */}
+      <section className="py-12 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
-              className="text-3xl md:text-4xl font-bold text-white mb-3"
+              className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+            >
+              What You <span className="text-mcgill-red">Get.</span>
+            </h2>
+            <p 
+              className="text-base text-gray-700 max-w-xl mx-auto"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+            >
+              Join the team and unlock access to elite training, competition opportunities, and a dedicated community.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div 
+                key={index}
+                className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* McGill Red Accent Border Top */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
+                
+                <div className="flex gap-4 p-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center">
+                      <benefit.icon className="w-6 h-6 text-mcgill-red" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 
+                      className="text-lg font-bold text-mcgill-dark mb-1"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      {benefit.title}
+                    </h3>
+                    <p 
+                      className="text-sm text-gray-600 leading-relaxed"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+                    >
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Commitment Section */}
+      <section className="py-12 bg-mcgill-rose">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8">
+            <h2 
+              className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
               style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
             >
               What's <span className="text-mcgill-red">Expected.</span>
             </h2>
             <p 
-              className="text-base text-gray-400 max-w-xl mx-auto"
-              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+              className="text-base text-gray-700 max-w-xl mx-auto"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
             >
               Being part of the team requires dedication, consistency, and commitment to excellence.
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {commitments.map((commitment, index) => (
                 <div 
                   key={index}
-                  className="flex gap-4 p-5 rounded-lg bg-white/[0.05] border border-white/10 hover:border-mcgill-red/40 hover:bg-white/[0.08] transition-all duration-300"
+                  className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex-shrink-0">
-                    <div 
-                      className="w-10 h-10 rounded-lg bg-mcgill-red/20 flex items-center justify-center text-mcgill-red font-bold text-sm"
-                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
-                    >
-                      {index + 1}
+                  {/* McGill Red Accent Border Top */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
+                  
+                  <div className="flex gap-4 p-6">
+                    <div className="flex-shrink-0">
+                      <div 
+                        className="w-10 h-10 rounded-lg bg-mcgill-red/10 flex items-center justify-center text-mcgill-red font-bold text-sm"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
+                      >
+                        {index + 1}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <h3 
-                      className="text-base font-bold text-white mb-1"
-                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                    >
-                      {commitment.title}
-                    </h3>
-                    <p 
-                      className="text-sm text-gray-400 leading-relaxed"
-                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-                    >
-                      {commitment.description}
-                    </p>
+                    <div>
+                      <h3 
+                        className="text-base font-bold text-mcgill-dark mb-1"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                      >
+                        {commitment.title}
+                      </h3>
+                      <p 
+                        className="text-sm text-gray-600 leading-relaxed"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+                      >
+                        {commitment.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -271,23 +266,18 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section 
-        className="py-10"
-        style={{
-          background: 'linear-gradient(to bottom, #150708 0%, #1a0a0c 100%)',
-        }}
-      >
+      <section className="py-12 pb-20 bg-mcgill-rose">
         <div className="container mx-auto px-6 text-center">
           <h2 
-            className="text-3xl md:text-4xl font-bold text-white mb-2"
+            className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-2"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
           >
             Ready to <span className="text-mcgill-red">Compete?</span>
           </h2>
           
           <p 
-            className="text-base text-gray-400 max-w-lg mx-auto mb-6"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+            className="text-base text-gray-700 max-w-lg mx-auto mb-6"
+            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
           >
             Join McGill's Intercollegiate Calisthenics Team and represent the university.
           </p>
@@ -304,7 +294,7 @@ const Competitions: React.FC = () => {
           </a>
 
           <p 
-            className="text-xs text-gray-500 mt-4"
+            className="text-xs text-gray-600 mt-4"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
           >
             Applications reviewed on a rolling basis

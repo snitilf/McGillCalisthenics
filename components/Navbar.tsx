@@ -133,42 +133,60 @@ const Navbar: React.FC = () => {
       {/* Mobile Overlay */}
       {mobileMenuOpen && (
         <div className="absolute top-0 left-0 w-full h-screen bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
-           {NAV_ITEMS.map((link, index) => (
-            <React.Fragment key={link.path}>
-              <NavLink
-                to={link.path}
-                className={({ isActive }) => 
-                  `font-figtree font-bold text-3xl text-mcgill-dark ${
-                    link.label === 'FAQ' ? 'uppercase' : ''
-                  } ${
-                    isActive ? 'text-mcgill-red' : ''
-                  }`}
-                style={{
-                  fontFamily: 'Schibsted Grotesk, sans-serif',
-                  fontWeight: 700,
-                }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </NavLink>
-              {/* Insert Register after Competitions (index 3) */}
-              {index === 3 && (
-                <a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="font-figtree font-bold text-3xl text-mcgill-dark uppercase"
-                  style={{
-                    fontFamily: 'Schibsted Grotesk, sans-serif',
-                    fontWeight: 700,
-                  }}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Register
-                </a>
-              )}
-            </React.Fragment>
+          {/* Left side links: Team, Workshops, Competitions */}
+          {leftLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) => 
+                `font-figtree font-bold text-3xl text-mcgill-dark ${
+                  link.label === 'FAQ' ? 'uppercase' : ''
+                } ${
+                  isActive ? 'text-mcgill-red' : ''
+                }`}
+              style={{
+                fontFamily: 'Schibsted Grotesk, sans-serif',
+                fontWeight: 700,
+              }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
           ))}
+          {/* Right side links: FAQ, Contact */}
+          {rightLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) => 
+                `font-figtree font-bold text-3xl text-mcgill-dark ${
+                  link.label === 'FAQ' ? 'uppercase' : ''
+                } ${
+                  isActive ? 'text-mcgill-red' : ''
+                }`}
+              style={{
+                fontFamily: 'Schibsted Grotesk, sans-serif',
+                fontWeight: 700,
+              }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+          {/* Register link at the end */}
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-figtree font-bold text-3xl text-mcgill-dark"
+            style={{
+              fontFamily: 'Schibsted Grotesk, sans-serif',
+              fontWeight: 700,
+            }}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Register
+          </a>
         </div>
       )}
     </nav>
