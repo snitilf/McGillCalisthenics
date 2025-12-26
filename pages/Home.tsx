@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 
             {/* Right column: tabs */}
             <div className="lg:w-2/3 pt-0 lg:pt-8">
-              <div className="flex flex-wrap gap-8 mb-12">
+              <div className="flex flex-wrap gap-8 mb-6">
                 {(['about', 'philosophy', 'community'] as const).map((tab) => (
                   <button
                     key={tab}
