@@ -7,7 +7,7 @@ import { Plus, Minus } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'about' | 'philosophy' | 'community'>('about');
-  const [openAccordion, setOpenAccordion] = useState<string | null>('about');
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const tabImages: Record<typeof activeTab, string> = {
     about: '/images/logonotext.png',
@@ -210,15 +210,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* cta */}
-      <section className="bg-mcgill-red py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
+      <section className="bg-mcgill-red py-12 md:py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-4 md:mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
-            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
+            <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-5 py-2 sm:px-8 sm:py-3 text-sm sm:text-base font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
           </a>
         </div>
-        {/* decorative lines */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-50 pointer-events-none">
+        {/* decorative lines - hidden on mobile */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-50 pointer-events-none hidden md:block">
            <div className="absolute top-0 left-1/4 w-[1px] h-full bg-mcgill-white rotate-12"></div>
            <div className="absolute top-0 right-1/4 w-[1px] h-full bg-mcgill-white -rotate-12"></div>
         </div>

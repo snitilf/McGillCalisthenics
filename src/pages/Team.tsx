@@ -247,7 +247,7 @@ const Team: React.FC = () => {
       </section>
 
       {/* team sections */}
-      <section className="pb-8 bg-mcgill-rose">
+      <section className="pb-2 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           {teamGroups.map((group, index) => (
             <TeamSection 
