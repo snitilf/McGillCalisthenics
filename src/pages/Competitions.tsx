@@ -89,7 +89,7 @@ const Competitions: React.FC = () => {
             className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed mb-3"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
           >
-            Represent calisthenics as a sport for McGill University.
+            McGill Intercollegiate Team.
           </p>
 
           <p 
@@ -101,7 +101,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* Subdivisions Section */}
-      <section className="py-12 bg-mcgill-rose">
+      <section className="py-6 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
@@ -153,7 +153,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* Benefits section */}
-      <section className="py-12 bg-mcgill-rose">
+      <section className="py-6 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
@@ -207,7 +207,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* Commitment section */}
-      <section className="py-12 bg-mcgill-rose">
+      <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
@@ -266,7 +266,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 pb-20 bg-mcgill-rose">
+      <section className="py-6 pb-10 bg-mcgill-rose">
         <div className="container mx-auto px-6 text-center">
           <h2 
             className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-2"

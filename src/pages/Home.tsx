@@ -49,9 +49,10 @@ const Home: React.FC = () => {
                     {tab === 'about' && 'About Us'}
                     {tab === 'philosophy' && 'Training Philosophy'}
                     {tab === 'community' && 'Our Community'}
-                    {activeTab === tab && (
-                      <span className="absolute bottom-[-2px] left-0 w-full h-[2px] bg-mcgill-red"></span>
-                    )}
+                    {/* Underline - red for active, grey for inactive */}
+                    <span className={`absolute bottom-[-2px] left-0 w-full h-[2px] transition-colors duration-300 ${
+                      activeTab === tab ? 'bg-mcgill-red' : 'bg-gray-300'
+                    }`}></span>
                   </button>
                 ))}
               </div>
@@ -60,30 +61,39 @@ const Home: React.FC = () => {
                 {activeTab === 'about' && (
                   <div className="animate-fade-in space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. Whether you are just getting started with your first pull-up or working on complex movements, our club provides a supportive environment to learn, progress, and have fun.
+                      Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. We welcome everyone from complete beginners to advanced athletes looking to refine their craft.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      We host weekly workshops, events, and friendly challenges. Come meet like-minded athletes, learn proper technique, and build lasting strength—no machines required.
+                      Whether you're working on your first pull-up or mastering complex movements like levers and planches, our club provides the coaching, progressions, and supportive environment you need to reach your goals safely and effectively.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                      We host weekly workshops, university & community events, and competitions throughout the year. Come meet like-minded athletes, learn proper technique, and build lasting strength—no gym machines required.
                     </p>
                   </div>
                 )}
                 {activeTab === 'philosophy' && (
                   <div className="animate-fade-in space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Every session starts with a thorough full-body warm‑up to prep joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and reduce injury risk.
+                      Every session begins with a thorough full-body warm-up designed to prepare your joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and minimize injury risk.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
                       Then we teach specific skills and progressions, breaking them down into clear steps. We build strength with structured workouts that target the exact muscles and movement patterns you need for steady, sustainable progress.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                      Each session concludes with dedicated cooldown and stretching. Our approach balances pushing your limits with smart recovery, ensuring you build strength consistently without burning out or getting injured along the way.
                     </p>
                   </div>
                 )}
                 {activeTab === 'community' && (
                   <div className="animate-fade-in space-y-6">
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      This club is about lifting each other up. We show up, put in the work, and motivate one another to get better every week. Progress is more fun and sustainable when you have a supportive team behind you.
+                      This club is about lifting each other up. We show up, put in the work, and motivate one another to improve every week. Progress is more fun and sustainable when you have a supportive team behind you.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Whether you are trying to unlock your first pull‑up or chasing advanced skills like handstands and levers, you will find partners, accountability, and encouragement here. We train together, celebrate victories, and grow stronger as a community.
+                      Whether you're trying to unlock your first muscle-up or chasing skills like handstands and handstand push-ups, you'll find training partners, accountability, and encouragement here. No one trains alone at McGill Calisthenics.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                      We train together, celebrate victories, and grow stronger as a community. From casual Wednesday sessions to organized competitions, there's always an opportunity to connect with fellow athletes who share your passion.
                     </p>
                   </div>
                 )}
@@ -113,4 +123,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
