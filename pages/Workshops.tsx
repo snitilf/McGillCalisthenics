@@ -75,21 +75,21 @@ const Workshops: React.FC = () => {
       {/* What Are Our Workshops? Section */}
       <section className="pt-8 pb-8 container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Feature Cards Grid */}
-          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 pt-16">
-            {/* Title centered above middle card */}
-            <div className="absolute top-0 left-0 right-0 text-center pointer-events-none">
-              <h2 
-                className="text-3xl md:text-4xl font-bold text-mcgill-dark"
-                style={{ 
-                  fontFamily: 'Schibsted Grotesk, sans-serif',
-                  fontWeight: 700,
-                }}
-              >
-                What Are Our <span className="text-mcgill-red">Workshops?</span>
-              </h2>
-            </div>
-            
+          {/* Title - now outside grid, not absolute positioned */}
+          <div className="text-center mb-8">
+            <h2 
+              className="text-3xl md:text-4xl font-bold text-mcgill-dark"
+              style={{ 
+                fontFamily: 'Schibsted Grotesk, sans-serif',
+                fontWeight: 700,
+              }}
+            >
+              What Are Our <span className="text-mcgill-red">Workshops?</span>
+            </h2>
+          </div>
+
+          {/* Feature Cards Grid - removed relative positioning and pt-16 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1: Inclusive for All Levels */}
             <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               {/* McGill Red Accent Border Top */}

@@ -15,15 +15,14 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero section */}
       <Hero />
 
-      {/* About Section - removed negative margin to prevent gap issues */}
-      <section className="relative bg-mcgill-rose py-32 z-30">
+      <section className="relative bg-mcgill-rose py-16 z-30">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16">
             
-            {/* Left Column: Heading & Graphic */}
+            {/* Left column: heading & graphic */}
             <div className="lg:w-1/3">
               <h2 className="text-5xl font-black uppercase leading-none mb-8 text-mcgill-dark">
                 
@@ -35,8 +34,8 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Tabs */}
-            <div className="lg:w-2/3 pt-0 lg:pt-20">
+            {/* Right column: tabs */}
+            <div className="lg:w-2/3 pt-0 lg:pt-8">
               <div className="flex flex-wrap gap-8 mb-12">
                 {(['about', 'philosophy', 'community'] as const).map((tab) => (
                   <button
@@ -95,7 +94,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA section */}
       <section className="bg-mcgill-red py-24 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
@@ -103,7 +102,7 @@ const Home: React.FC = () => {
             <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-8 py-3 font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
           </a>
         </div>
-        {/* Decorative Lines */}
+        {/* Decorative lines */}
         <div className="absolute top-0 left-0 w-full h-full opacity-50 pointer-events-none">
            <div className="absolute top-0 left-1/4 w-[1px] h-full bg-mcgill-white rotate-12"></div>
            <div className="absolute top-0 right-1/4 w-[1px] h-full bg-mcgill-white -rotate-12"></div>

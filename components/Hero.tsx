@@ -28,12 +28,12 @@ const Hero: React.FC = () => {
          <div className="absolute inset-0 bg-black/10" />
       </div>
 
-      {/* MAIN TYPOGRAPHY */}
-      <div className="relative z-20 text-center pointer-events-none w-full">
+      {/* MAIN TYPOGRAPHY - constrained width to fit within image area */}
+      <div className="relative z-20 text-center pointer-events-none w-full px-4">
         <h1 
             className="font-figtree font-extrabold italic leading-[0.85] tracking-tight"
             style={{ 
-                fontSize: 'clamp(4rem, 12vw, 12rem)',
+                fontSize: 'clamp(4rem, 10vw, 12rem)',
                 fontFamily: 'Figtree, sans-serif',
                 fontWeight: 800,
                 fontStyle: 'italic',
@@ -45,17 +45,26 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
-      {/* LEFT SIDE CONTENT: est Year */}
-      <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 md:translate-y-[-120px] z-10">
-        <p className="font-display text-black/80 text-xs md:text-lg leading-relaxed rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+      {/* LEFT SIDE CONTENT: est Year - hidden on mobile, shown on larger screens */}
+      <div className="absolute left-4 lg:left-16 top-1/2 -translate-y-1/2 lg:-translate-y-[120px] z-10 hidden md:block">
+        <p className="font-display text-black/80 text-sm lg:text-lg leading-relaxed rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
             <span style={{ display: 'inline-block', transform: 'rotate(90deg)' }}>©</span> EST. 2024
         </p>
       </div>
-      {/* RIGHT SIDE CONTENT: Tagline */}
-      <div className="absolute right-8 md:right-16 bottom-8 md:bottom-16 z-10 text-left max-w-lg">
-        <p className="text-black/90 text-xs md:text-lg leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+
+      {/* RIGHT SIDE CONTENT: Tagline - repositioned to stay outside image on all screens */}
+      <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-right hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
+        <p className="text-black/90 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
           Built Different.
+          <br />
           A student-led community dedicated to bodyweight training excellence at McGill University.
+        </p>
+      </div>
+
+      {/* MOBILE: Tagline at bottom center - shown only on mobile */}
+      <div className="absolute bottom-6 left-0 right-0 z-10 text-center px-6 md:hidden">
+        <p className="text-black/90 text-xs leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+          Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.
         </p>
       </div>
     </section>
