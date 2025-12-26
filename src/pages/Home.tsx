@@ -9,10 +9,10 @@ const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'about' | 'philosophy' | 'community'>('about');
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
-  const tabImages: Record<typeof activeTab, string> = {
+  const tabImages: Record<typeof activeTab, string | string[]> = {
     about: '/images/logonotext.png',
     philosophy: '/images/handstand.jpg',
-    community: '/images/group.jpeg',
+    community: ['/images/workshops/IMG_8856.jpeg', 'public/images/workshops/IMG_8906.jpeg'],
   };
 
   const sections = [
@@ -135,7 +135,24 @@ const Home: React.FC = () => {
               <div className={`w-full aspect-square rounded-lg relative overflow-hidden group ${
                 activeTab === 'about' ? 'bg-mcgill-rose' : 'bg-white'
               }`}>
-                 <img src={tabImages[activeTab]} alt="Community" className="w-full h-full object-cover transition-all duration-500" />
+                {activeTab === 'community' && Array.isArray(tabImages[activeTab]) ? (
+                  <div className="w-full h-full flex flex-col gap-0">
+                    {tabImages[activeTab].map((img, idx) => (
+                      <img 
+                        key={idx}
+                        src={img} 
+                        alt="Community" 
+                        className="w-full h-1/2 object-cover transition-all duration-500" 
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <img 
+                    src={typeof tabImages[activeTab] === 'string' ? tabImages[activeTab] : tabImages[activeTab][0]} 
+                    alt={activeTab === 'about' ? 'Logo' : activeTab === 'philosophy' ? 'Handstand' : 'Community'} 
+                    className="w-full h-full object-cover transition-all duration-500" 
+                  />
+                )}
               </div>
             </div>
 
