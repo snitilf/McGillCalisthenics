@@ -53,11 +53,11 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Right side content: Tagline - hidden on mobile, shown on larger screens */}
-      <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-right hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
+      <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-left hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
         <p className="text-black/90 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
           Built Different.
           <br />
-          A student-led community dedicated to bodyweight training excellence at McGill University.
+          A student-led community dedicated to bodyweight training excellence.
         </p>
       </div>
     </section>
