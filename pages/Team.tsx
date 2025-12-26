@@ -41,7 +41,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {members.map((member) => (
           <div 
             key={member.id}
-            className="flex w-full flex-col items-center rounded-xl bg-mcgill-red p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+            className="flex w-full flex-col items-center rounded-xl bg-mcgill-red/40 p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
           >
 
             <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
@@ -149,9 +149,9 @@ const Team: React.FC = () => {
           name: 'Filip Snítil', 
           role: 'VP Tech', 
           image: '/images/execs/Filip.jpg',
-          offsetX: 100,   // left/right
+          offsetX: 110,   // left/right
           offsetY: 10,   // up/down (lower = more towards top of photo)
-          zoom: 2.7,       // zoom level
+          zoom: 3,       // zoom level
         },
         { 
           id: '7', 

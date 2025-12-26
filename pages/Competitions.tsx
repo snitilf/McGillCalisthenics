@@ -94,7 +94,7 @@ const Competitions: React.FC = () => {
             className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-3"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
           >
-            Represent calisthenics as a sport at McGill University.
+            Represent calisthenics as a sport for McGill University.
           </p>
 
           <p 
