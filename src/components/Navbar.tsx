@@ -131,31 +131,20 @@ const Navbar: React.FC = () => {
 
       {/* Mobile overlay */}
       {mobileMenuOpen && (
-        <div className="absolute top-0 left-0 w-full min-h-[100dvh] bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
-          {/* Home link */}
-          <NavLink
-            to="/"
-            className={({ isActive }) => 
-              `font-figtree font-bold text-3xl text-mcgill-dark ${
-                isActive ? 'text-mcgill-red' : ''
-              }`}
-            style={{
-              fontFamily: 'Schibsted Grotesk, sans-serif',
-              fontWeight: 700,
-            }}
-            onClick={() => setMobileMenuOpen(false)}
+        <div 
+          className="absolute top-0 left-0 w-full min-h-[100dvh] bg-mcgill-rose/70 backdrop-blur-sm z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          {/* Menu content container - stops propagation so clicks on menu items don't close */}
+          <div 
+            className="flex flex-col items-center gap-8"
+            onClick={(e) => e.stopPropagation()}
           >
-            Home
-          </NavLink>
-          {/* Left side: Team, Workshops, Competitions */}
-          {leftLinks.map((link) => (
+            {/* Home link */}
             <NavLink
-              key={link.path}
-              to={link.path}
+              to="/"
               className={({ isActive }) => 
                 `font-figtree font-bold text-3xl text-mcgill-dark ${
-                  link.label === 'FAQ' ? 'uppercase' : ''
-                } ${
                   isActive ? 'text-mcgill-red' : ''
                 }`}
               style={{
@@ -164,43 +153,63 @@ const Navbar: React.FC = () => {
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.label}
+              Home
             </NavLink>
-          ))}
-          {/* Right side: FAQ, Contact */}
-          {rightLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) => 
-                `font-figtree font-bold text-3xl text-mcgill-dark ${
-                  link.label === 'FAQ' ? 'uppercase' : ''
-                } ${
-                  isActive ? 'text-mcgill-red' : ''
-                }`}
+            {/* Left side: Team, Workshops, Competitions */}
+            {leftLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) => 
+                  `font-figtree font-bold text-3xl text-mcgill-dark ${
+                    link.label === 'FAQ' ? 'uppercase' : ''
+                  } ${
+                    isActive ? 'text-mcgill-red' : ''
+                  }`}
+                style={{
+                  fontFamily: 'Schibsted Grotesk, sans-serif',
+                  fontWeight: 700,
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+            {/* Right side: FAQ, Contact */}
+            {rightLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) => 
+                  `font-figtree font-bold text-3xl text-mcgill-dark ${
+                    link.label === 'FAQ' ? 'uppercase' : ''
+                  } ${
+                    isActive ? 'text-mcgill-red' : ''
+                  }`}
+                style={{
+                  fontFamily: 'Schibsted Grotesk, sans-serif',
+                  fontWeight: 700,
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+            {/* Register link at the end */}
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-figtree font-bold text-3xl text-mcgill-dark"
               style={{
                 fontFamily: 'Schibsted Grotesk, sans-serif',
                 fontWeight: 700,
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.label}
-            </NavLink>
-          ))}
-          {/* Register link at the end */}
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="font-figtree font-bold text-3xl text-mcgill-dark"
-            style={{
-              fontFamily: 'Schibsted Grotesk, sans-serif',
-              fontWeight: 700,
-            }}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Register
-          </a>
+              Register
+            </a>
+          </div>
         </div>
       )}
     </nav>
