@@ -3,9 +3,11 @@ import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 import { SOCIAL_LINKS } from '../constants';
 import Hero from '../components/Hero';
+import { Plus, Minus } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'about' | 'philosophy' | 'community'>('about');
+  const [openAccordion, setOpenAccordion] = useState<string | null>('about');
 
   const tabImages: Record<typeof activeTab, string> = {
     about: '/images/logonotext.png',
@@ -13,13 +15,121 @@ const Home: React.FC = () => {
     community: '/images/group.jpeg',
   };
 
+  const sections = [
+    {
+      id: 'about',
+      title: 'About Us',
+      content: [
+        "Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. We welcome everyone from complete beginners to advanced athletes looking to refine their craft.",
+        "Whether you're working on your first pull-up or mastering complex movements like levers and planches, our club provides the coaching, progressions, and supportive environment you need to reach your goals safely and effectively.",
+        "We host weekly workshops, university & community events, and competitions throughout the year. Come meet like-minded athletes, learn proper technique, and build lasting strength—no gym machines required."
+      ]
+    },
+    {
+      id: 'philosophy',
+      title: 'Training Philosophy',
+      content: [
+        "Every session begins with a thorough full-body warm-up designed to prepare your joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and minimize injury risk.",
+        "Then we teach specific skills and progressions, breaking them down into clear steps. We build strength with structured workouts that target the exact muscles and movement patterns you need for steady, sustainable progress.",
+        "Each session concludes with dedicated cooldown and stretching. Our approach balances pushing your limits with smart recovery, ensuring you build strength consistently without burning out or getting injured along the way."
+      ]
+    },
+    {
+      id: 'community',
+      title: 'Our Community',
+      content: [
+        "This club is about lifting each other up. We show up, put in the work, and motivate one another to improve every week. Progress is more fun and sustainable when you have a supportive team behind you.",
+        "Whether you're trying to unlock your first muscle-up or chasing skills like handstands and handstand push-ups, you'll find training partners, accountability, and encouragement here. No one trains alone at McGill Calisthenics.",
+        "We train together, celebrate victories, and grow stronger as a community. From casual Wednesday sessions to organized competitions, there's always an opportunity to connect with fellow athletes who share your passion."
+      ]
+    }
+  ];
+
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
   return (
     <div className="min-h-screen">
       <Hero />
 
-      <section className="relative bg-mcgill-rose py-16 z-30">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-16">
+      <section className="relative bg-mcgill-rose py-12 lg:py-16 z-30">
+        <div className="container mx-auto px-4 sm:px-6">
+          
+          {/* mobile accordion layout */}
+          <div className="lg:hidden space-y-3">
+            {sections.map((section) => {
+              const isOpen = openAccordion === section.id;
+              
+              return (
+                <div 
+                  key={section.id}
+                  className={`rounded-lg transition-all duration-300 shadow-sm ${
+                    isOpen 
+                      ? 'bg-white ring-1 ring-mcgill-red/20 shadow-md' 
+                      : 'bg-white hover:shadow-md'
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleAccordion(section.id)}
+                    className="w-full px-4 py-4 flex items-center justify-between text-left"
+                  >
+                    <h3 
+                      className={`text-lg font-bold pr-4 transition-colors duration-300 ${
+                        isOpen ? 'text-mcgill-red' : 'text-mcgill-dark'
+                      }`}
+                      style={{ 
+                        fontFamily: 'Schibsted Grotesk, sans-serif',
+                        fontWeight: 700,
+                      }}
+                    >
+                      {section.title}
+                    </h3>
+                    <div 
+                      className={`flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center transition-all duration-300 ${
+                        isOpen 
+                          ? 'bg-mcgill-red text-white' 
+                          : 'bg-gray-100 text-gray-500'
+                      }`}
+                    >
+                      {isOpen ? (
+                        <Minus className="w-4 h-4" />
+                      ) : (
+                        <Plus className="w-4 h-4" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-4 pb-4">
+                      <div className="h-px bg-gray-100 mb-4" />
+                      <div className="space-y-4">
+                        {section.content.map((paragraph, idx) => (
+                          <p 
+                            key={idx}
+                            className="text-gray-600 leading-relaxed"
+                            style={{ 
+                              fontFamily: 'Schibsted Grotesk, sans-serif',
+                              fontWeight: 600,
+                            }}
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* desktop tabs layout */}
+          <div className="hidden lg:flex flex-row gap-16">
             {/* image */}
             <div className="lg:w-1/3">
               <div className={`w-full aspect-square rounded-lg relative overflow-hidden group ${
