@@ -309,16 +309,14 @@ const Competitions: React.FC = () => {
             Join McGill's Intercollegiate Calisthenics Team and represent the university.
           </p>
 
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe..." 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-mcgill-red text-white px-8 py-3 font-bold uppercase tracking-wider hover:bg-white hover:text-mcgill-red border-2 border-mcgill-red transition-all duration-300 group"
+          <button 
+            disabled
+            className="inline-flex items-center gap-2 bg-gray-400 text-white px-8 py-3 font-bold uppercase tracking-wider border-2 border-gray-400 cursor-not-allowed opacity-60"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
           >
             Apply Now
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
+            <ChevronRight className="w-4 h-4" />
+          </button>
 
           <p 
             className="text-xs text-gray-600 mt-4"
