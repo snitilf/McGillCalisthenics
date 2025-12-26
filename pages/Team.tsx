@@ -22,13 +22,12 @@ interface TeamGroup {
   members: TeamMember[];
 }
 
-// Reusable Team Section Component (like MindVista's TeamSection)
 const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title, members }) => {
   return (
     <section className="mb-16">
       {/* Section Title */}
       <h2 
-        className="mb-8 text-center text-3xl font-bold text-white"
+        className="mb-8 text-center text-3xl font-bold text-mcgill-dark"
         style={{ 
           fontFamily: 'Schibsted Grotesk, sans-serif',
           fontWeight: 700,
@@ -42,9 +41,9 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {members.map((member) => (
           <div 
             key={member.id}
-            className="flex w-full flex-col items-center rounded-xl bg-[#1e1b4b]/60 p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+            className="flex w-full flex-col items-center rounded-xl bg-mcgill-red p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
           >
-            {/* Circular Photo - 160px like MindVista */}
+
             <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
               <img 
                 src={member.image} 
@@ -70,7 +69,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
 
             {/* Role */}
             <p 
-              className="font-medium text-gray-400"
+              className="font-medium text-gray-200"
               style={{ 
                 fontFamily: 'Schibsted Grotesk, sans-serif',
                 fontWeight: 500,
@@ -142,17 +141,17 @@ const Team: React.FC = () => {
           role: 'Co-VP External', 
           image: '/images/execs/Louis.jpg',
           offsetX: 50,   // left/right
-          offsetY: 20,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetY: 100,   // up/down (lower = more towards top of photo)
+          zoom: 1.2,       // zoom level
         },
         { 
           id: '5', 
           name: 'Filip Snítil', 
           role: 'VP Tech', 
           image: '/images/execs/Filip.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 15,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 100,   // left/right
+          offsetY: 10,   // up/down (lower = more towards top of photo)
+          zoom: 2.7,       // zoom level
         },
         { 
           id: '7', 
@@ -161,7 +160,7 @@ const Team: React.FC = () => {
           image: '/images/execs/Mia.jpg',
           offsetX: 50,   // left/right
           offsetY: 20,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          zoom: 1.3,       // zoom level
         },
       ]
     },
@@ -183,25 +182,19 @@ const Team: React.FC = () => {
           role: 'Team Manager', 
           image: '/images/execs/Niko.jpg',
           offsetX: 50,   // left/right
-          offsetY: 20,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetY: 90,   // up/down (lower = more towards top of photo)
+          zoom: 1.6,       // zoom level
         },
       ]
     },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section - Dark theme matching Competitions */}
-      <section 
-        className="pt-32 pb-8"
-        style={{
-          background: 'linear-gradient(180deg, #4a151d 0%, #3a1219 15%, #2a0e14 30%, #1a0a0c 50%, #120608 70%, #0f0405 100%)',
-        }}
-      >
+    <div className="min-h-screen bg-mcgill-rose">
+      <section className="bg-mcgill-rose pt-32 pb-12">
         <div className="container mx-auto px-6 text-center">
           <h1 
-            className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-4"
+            className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
             style={{ 
               fontSize: 'clamp(3rem, 8vw, 6rem)',
               fontFamily: 'Figtree, sans-serif',
@@ -209,14 +202,14 @@ const Team: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-white">Meet The </span>
+            <span className="text-mcgill-dark">Meet The </span>
             <span className="text-mcgill-red">Team.</span>
           </h1>
           <p 
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed"
             style={{ 
               fontFamily: 'Schibsted Grotesk, sans-serif', 
-              fontWeight: 500 
+              fontWeight: 600 
             }}
           >
             The students behind the movement. Dedicated to building the calisthenics community at McGill University.
@@ -225,12 +218,7 @@ const Team: React.FC = () => {
       </section>
 
       {/* Team Sections */}
-      <section 
-        className="py-12"
-        style={{
-          background: 'linear-gradient(to bottom, #0f0405 0%, #150708 50%, #1a0a0c 100%)',
-        }}
-      >
+      <section className="pb-8 bg-mcgill-rose">
         <div className="container mx-auto px-6 max-w-7xl">
           {teamGroups.map((group, index) => (
             <TeamSection 
