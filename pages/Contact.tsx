@@ -1,15 +1,38 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    setIsSubmitted(true);
-    // Scroll to top of page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsLoading(true);
+    setError(false);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -48,6 +71,9 @@ const Contact: React.FC = () => {
             <div className="p-8 md:p-10">
               {!isSubmitted ? (
                 <form className="space-y-6" onSubmit={handleSubmit}>
+                  {/* Hidden field for Web3Forms subject line */}
+                  <input type="hidden" name="subject" value="New Contact Form Submission - McGill Calisthenics" />
+                  
                   <div>
                     <label 
                       className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2"
@@ -56,7 +82,8 @@ const Contact: React.FC = () => {
                       Full Name
                     </label>
                     <input 
-                      type="text" 
+                      type="text"
+                      name="name"
                       className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="Arnold Schwarzenegger" 
@@ -71,7 +98,8 @@ const Contact: React.FC = () => {
                       Email Address
                     </label>
                     <input 
-                      type="email" 
+                      type="email"
+                      name="email"
                       className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="arnold@mail.mcgill.ca" 
@@ -86,7 +114,8 @@ const Contact: React.FC = () => {
                       Subject
                     </label>
                     <input 
-                      type="text" 
+                      type="text"
+                      name="form_subject"
                       className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="Workshop Inquiry" 
@@ -101,6 +130,7 @@ const Contact: React.FC = () => {
                       Message
                     </label>
                     <textarea 
+                      name="message"
                       rows={5} 
                       className="w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-lg focus:outline-none focus:border-mcgill-red transition-colors text-base resize-none" 
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
@@ -108,13 +138,36 @@ const Contact: React.FC = () => {
                       required
                     ></textarea>
                   </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
+                      <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                      <p 
+                        className="text-sm"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+                      >
+                        Something went wrong. Please try again or reach out via social media.
+                      </p>
+                    </div>
+                  )}
+
                   <button 
-                    type="submit" 
-                    className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg"
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg disabled:opacity-70 disabled:cursor-not-allowed"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
                     <span className="inline-flex items-center justify-center">
-                      Send Message <Send className="ml-2 w-4 h-4"/>
+                      {isLoading ? (
+                        <>
+                          Sending... <Loader2 className="ml-2 w-4 h-4 animate-spin"/>
+                        </>
+                      ) : (
+                        <>
+                          Send Message <Send className="ml-2 w-4 h-4"/>
+                        </>
+                      )}
                     </span>
                   </button>
                 </form>
