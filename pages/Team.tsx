@@ -27,7 +27,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
     <section className="mb-16">
       {/* Section Title */}
       <h2 
-        className="mb-8 text-center text-3xl font-bold text-mcgill-dark"
+        className="mb-8 text-center text-3xl font-bold text-mcgill-gray"
         style={{ 
           fontFamily: 'Schibsted Grotesk, sans-serif',
           fontWeight: 700,
@@ -41,7 +41,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {members.map((member) => (
           <div 
             key={member.id}
-            className="flex w-full flex-col items-center rounded-xl bg-mcgill-red/40 p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+            className="flex w-full flex-col items-center rounded-xl bg-white p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
           >
 
             <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
@@ -58,7 +58,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
 
             {/* Name */}
             <h3 
-              className="text-xl font-semibold text-white"
+              className="text-xl font-semibold text-mcgill-gray"
               style={{ 
                 fontFamily: 'Schibsted Grotesk, sans-serif',
                 fontWeight: 600,
@@ -69,7 +69,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
 
             {/* Role */}
             <p 
-              className="font-medium text-gray-200"
+              className="font-medium text-mcgill-gray"
               style={{ 
                 fontFamily: 'Schibsted Grotesk, sans-serif',
                 fontWeight: 500,
