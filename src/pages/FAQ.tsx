@@ -12,7 +12,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Will there be workshops during the Winter 2026 semester?",
-    answer: "For the Winter 2026 semester, our schedule is dedicated exclusively to Team Practices. Our free community workshops will officially resume in Summer 2026. Stay tuned to our socials for the exact kickoff date."
+    answer: "For the Winter 2026 semester, we're moving indoors with coached classes open to all skill levels, while our international competitive team continues specialized training. Our free outdoor community workshops will officially resume in Summer 2026. Stay tuned to our socials for the exact kickoff date."
   },
   {
     question: "What is the difference between the Club and the Team?",
