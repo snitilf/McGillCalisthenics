@@ -187,6 +187,47 @@ const Team: React.FC = () => {
         },
       ]
     },
+    {
+      title: 'Coaching Team',
+      members: [
+        { 
+          id: '10', 
+          name: 'Alek Tanev', 
+          role: 'Founder/Coach', 
+          image: '/images/execs/Alek.jpg',
+          offsetX: 50,   // left/right
+          offsetY: 50,   // up/down (lower = more towards top of photo)
+          zoom: 1,       // zoom level
+        },
+        { 
+          id: '11', 
+          name: 'Hassan-Khalid Zakaryaa', 
+          role: 'Coach', 
+          image: '/images/execs/Khalid.jpg',
+          offsetX: 50,   // left/right
+          offsetY: 50,   // up/down (lower = more towards top of photo)
+          zoom: 1,       // zoom level
+        },
+        { 
+          id: '12', 
+          name: 'David Maksimov', 
+          role: 'Coach', 
+          image: '/images/execs/David.jpg',
+          offsetX: 50,   // left/right
+          offsetY: 90,   // up/down (lower = more towards top of photo)
+          zoom: 1,       // zoom level
+        },
+        { 
+          id: '13', 
+          name: 'Kenzo Dekkal-Furuya', 
+          role: 'Coach', 
+          image: '/images/execs/Kenzo.png',
+          offsetX: 50,   // left/right
+          offsetY: 50,   // up/down (lower = more towards top of photo)
+          zoom: 1,       // zoom level
+        },
+      ]
+    },
   ];
 
   return (
@@ -234,4 +275,3 @@ const Team: React.FC = () => {
 };
 
 export default Team;
-
