@@ -306,3 +306,4 @@ const Competitions: React.FC = () => {
 };
 
 export default Competitions;
+

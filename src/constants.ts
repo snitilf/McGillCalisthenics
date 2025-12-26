@@ -65,3 +65,4 @@ export const SOCIAL_LINKS = {
   whatsapp: 'https://chat.whatsapp.com/LooJj9ridYE6DZN5rSLXFo',
   email: 'calisthenics.vpcommunications@mcgilleus.ca'
 };
+

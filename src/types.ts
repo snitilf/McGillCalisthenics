@@ -24,3 +24,4 @@ export enum WeekDay {
   Friday = 5,
   Saturday = 6,
 }
+
