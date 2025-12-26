@@ -69,7 +69,7 @@ const Competitions: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - With smooth gradient at top for navbar visibility */}
+      {/* Hero Section - smooth gradient at top for navbar visibility */}
       <section 
         className="pt-32 pb-16"
         style={{
@@ -101,14 +101,13 @@ const Competitions: React.FC = () => {
             className="text-mcgill-red text-sm md:text-base font-bold tracking-wide"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
           >
-            McGill Intercollegiate Team
           </p>
         </div>
       </section>
 
       {/* Subdivisions Section */}
       <section 
-        className="py-8"
+        className="py-5"
         style={{
           background: 'linear-gradient(to bottom, #0f0405 0%, #150708 100%)',
         }}
