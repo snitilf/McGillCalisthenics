@@ -1,22 +1,19 @@
 import React from 'react';
 
-// Team member type with image crop controls
+// team member with image positioning controls
 interface TeamMember {
   id: string;
   name: string;
   role: string;
   image: string;
-  
-  // === IMAGE CROP CONTROLS ===
-  // offsetX: Horizontal position (0 = left edge, 50 = center, 100 = right edge)
-  // offsetY: Vertical position (0 = top edge, 50 = center, 100 = bottom edge)
-  // zoom: Scale level (1 = normal, 1.2 = 20% zoom in, 0.8 = 20% zoom out)
+  // offsetX: 0 = left, 50 = center, 100 = right
+  // offsetY: 0 = top, 50 = center, 100 = bottom
+  // zoom: 1 = normal, >1 = zoom in, <1 = zoom out
   offsetX?: number;
   offsetY?: number;
   zoom?: number;
 }
 
-// Grouped team structure
 interface TeamGroup {
   title: string;
   members: TeamMember[];
@@ -25,7 +22,6 @@ interface TeamGroup {
 const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title, members }) => {
   return (
     <section className="mb-16">
-      {/* Section title */}
       <h2 
         className="mb-8 text-center text-3xl font-bold text-mcgill-dark"
         style={{ 
@@ -36,7 +32,6 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {title}
       </h2>
 
-      {/* Members - Flexbox centered with responsive widths */}
       <div className="flex flex-wrap justify-center gap-8">
         {members.map((member) => (
           <div 
@@ -56,7 +51,6 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
               />
             </div>
 
-            {/* Name */}
             <h3 
               className="text-xl font-semibold text-mcgill-dark"
               style={{ 
@@ -67,7 +61,6 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
               {member.name}
             </h3>
 
-            {/* Role */}
             <p 
               className="font-medium text-mcgill-gray"
               style={{ 
@@ -85,11 +78,6 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
 };
 
 const Team: React.FC = () => {
-  // HOW TO ADJUST PHOTOS:
-  // - offsetX: Move LEFT (0) ← → Move RIGHT (100). Default: 50 (center)
-  // - offsetY: Move UP (0) ↑ ↓ Move DOWN (100). Default: 50 (center)
-  // - zoom: Zoom OUT (0.8) ← → Zoom IN (1.5). Default: 1 (no zoom)
-  //
   const teamGroups: TeamGroup[] = [
     {
       title: 'Internal Team',
@@ -99,27 +87,27 @@ const Team: React.FC = () => {
           name: 'Noah Havrot-Landry', 
           role: 'President', 
           image: '/images/execs/Noah.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 20,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 20,
+          zoom: 1,
         },
         { 
           id: '2', 
           name: 'Charles Morin', 
           role: 'VP Internal', 
           image: '/images/execs/Charles.png',
-          offsetX: 50,   // left/right
-          offsetY: 55,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 55,
+          zoom: 1,
         },
         { 
           id: '6', 
           name: 'Natalia Andrea Lucena Henao', 
           role: 'VP Finance', 
           image: '/images/execs/Natalia.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 100,   // up/down (lower = more towards top of photo)
-          zoom: 3,       // zoom level
+          offsetX: 50,
+          offsetY: 100,
+          zoom: 3,
         },
       ]
     },
@@ -131,36 +119,36 @@ const Team: React.FC = () => {
           name: 'Adrian Marinov', 
           role: 'Co-VP External', 
           image: '/images/execs/Adrian.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 25,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 25,
+          zoom: 1,
         },
         { 
           id: '4', 
           name: 'Louis Philippe Bejjani', 
           role: 'Co-VP External', 
           image: '/images/execs/Louis.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 100,   // up/down (lower = more towards top of photo)
-          zoom: 1.2,       // zoom level
+          offsetX: 50,
+          offsetY: 100,
+          zoom: 1.2,
         },
         { 
           id: '5', 
           name: 'Filip Snítil', 
           role: 'VP Tech', 
           image: '/images/execs/Filip.jpg',
-          offsetX: 110,   // left/right
-          offsetY: 10,   // up/down (lower = more towards top of photo)
-          zoom: 3,       // zoom level
+          offsetX: 110,
+          offsetY: 10,
+          zoom: 3,
         },
         { 
           id: '7', 
           name: 'Mia Desgagné', 
           role: 'VP Communications', 
           image: '/images/execs/Mia.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 20,   // up/down (lower = more towards top of photo)
-          zoom: 1.3,       // zoom level
+          offsetX: 50,
+          offsetY: 20,
+          zoom: 1.3,
         },
       ]
     },
@@ -172,18 +160,18 @@ const Team: React.FC = () => {
           name: 'Katya Shubochkin', 
           role: 'VP Operations & Logistics', 
           image: '/images/execs/Katya.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 25,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 25,
+          zoom: 1,
         },
         { 
           id: '9', 
           name: 'Niko Vriniotis', 
           role: 'Team Manager', 
           image: '/images/execs/Niko.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 90,   // up/down (lower = more towards top of photo)
-          zoom: 1.6,       // zoom level
+          offsetX: 50,
+          offsetY: 90,
+          zoom: 1.6,
         },
       ]
     },
@@ -195,36 +183,36 @@ const Team: React.FC = () => {
           name: 'Alek Tanev', 
           role: 'Founder/Coach', 
           image: '/images/execs/Alek.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 50,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 50,
+          zoom: 1,
         },
         { 
           id: '11', 
           name: 'Hassan-Khalid Zakaryaa', 
           role: 'Coach', 
           image: '/images/execs/Khalid.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 50,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 50,
+          zoom: 1,
         },
         { 
           id: '12', 
           name: 'David Maksimov', 
           role: 'Coach', 
           image: '/images/execs/David.jpg',
-          offsetX: 50,   // left/right
-          offsetY: 90,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 90,
+          zoom: 1,
         },
         { 
           id: '13', 
           name: 'Kenzo Dekkal-Furuya', 
           role: 'Coach', 
           image: '/images/execs/Kenzo.png',
-          offsetX: 50,   // left/right
-          offsetY: 50,   // up/down (lower = more towards top of photo)
-          zoom: 1,       // zoom level
+          offsetX: 50,
+          offsetY: 50,
+          zoom: 1,
         },
       ]
     },
@@ -258,7 +246,7 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* Team sections */}
+      {/* team sections */}
       <section className="pb-8 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           {teamGroups.map((group, index) => (

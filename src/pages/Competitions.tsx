@@ -69,7 +69,7 @@ const Competitions: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-mcgill-rose">
-      {/* Hero section */}
+      {/* hero */}
       <section className="bg-mcgill-rose pt-32 pb-0">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 
@@ -100,7 +100,7 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* USCCO Banner */}
+      {/* uscco banner */}
       <section className="py-6 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6">
           <a 
@@ -127,7 +127,7 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* Subdivisions Section */}
+      {/* subdivisions */}
       <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
@@ -151,7 +151,7 @@ const Competitions: React.FC = () => {
                 key={index}
                 className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                {/* McGill red accent border top */}
+                {/* red accent border */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                 
                 <div className="p-4 sm:p-6">
@@ -179,7 +179,7 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* Benefits section */}
+      {/* benefits */}
       <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
@@ -203,7 +203,7 @@ const Competitions: React.FC = () => {
                 key={index}
                 className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                {/* McGill Red Accent Border Top */}
+                {/* red accent border */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                 
                 <div className="flex gap-4 p-4 sm:p-6">
@@ -233,7 +233,7 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* Commitment section */}
+      {/* commitments */}
       <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
@@ -292,7 +292,7 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* cta */}
       <section className="py-8 pb-10 bg-mcgill-rose">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 

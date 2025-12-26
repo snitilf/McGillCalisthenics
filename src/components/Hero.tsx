@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       }}
     >
       
-      {/* Central image strip - uses inset-0 variant for full coverage */}
+      {/* center image strip */}
       <div 
         className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%]"
         style={{ height: '100%' }}
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
          <div className="absolute inset-0 bg-black/10" />
       </div>
 
-      {/* Main typography - constrained width to fit within image area */}
+      {/* main title */}
       <div className="relative z-20 text-center pointer-events-none w-full px-4">
         <h1 
             className="font-figtree font-extrabold italic leading-[0.85] tracking-tight"
@@ -45,14 +45,14 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
-      {/* Left side content: est year - hidden on mobile, shown on larger screens */}
+      {/* est. 2024 - desktop only */}
       <div className="absolute left-4 lg:left-16 top-1/2 -translate-y-1/2 lg:-translate-y-[120px] z-10 hidden md:block">
         <p className="font-display text-black/80 text-sm lg:text-lg leading-relaxed rotate-180" style={{ writingMode: 'vertical-rl', fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
             <span style={{ display: 'inline-block', transform: 'rotate(90deg)' }}>©</span> EST. 2024
         </p>
       </div>
 
-      {/* Right side content: Tagline - hidden on mobile, shown on larger screens */}
+      {/* tagline - desktop only */}
       <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-left hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
         <p className="text-black/90 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
           Built Different.
