@@ -69,8 +69,8 @@ const Competitions: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-mcgill-rose">
-      {/* Hero Section */}
-      <section className="bg-mcgill-rose pt-32 pb-8">
+      {/* Hero section */}
+      <section className="bg-mcgill-rose pt-32 pb-0">
         <div className="container mx-auto px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-4"
