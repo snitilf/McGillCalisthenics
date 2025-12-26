@@ -33,11 +33,11 @@ export const WORKSHOP_TOPICS: WorkshopTopic[] = [
 // Format: 'YYYY-MM-DD' => topic name
 export const MANUAL_WORKSHOP_TOPICS: Record<string, string> = {
   // add dates manually:
-  '2025-12-03': 'PLANCHE',
-  '2025-12-10': 'Studying FOR FINALS',
-  '2025-12-17': 'More studying',
-  '2025-12-24': 'Merry Christmas ya filthy animals',
-  '2025-12-31': 'I wish I could planche in front of the Christmas tree',
+  '2025-12-03': 'Team Training',
+  '2025-12-10': 'Team Training',
+  '2025-12-17': 'Team Training',
+  '2025-12-24': 'Team Training',
+  '2025-12-31': 'Team Training',
 };
 
 // helper function to get workshop topic on workshops page

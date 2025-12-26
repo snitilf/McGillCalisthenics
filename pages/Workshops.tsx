@@ -19,7 +19,7 @@ const Workshops: React.FC = () => {
   const generateCalendarDays = () => {
     const days = [];
     
-    // Get the first day of the month (0 = Sunday, 1 = Monday, etc.)
+    // Get the first day of the month (0 = Sunday, 1 = Monday, etc)
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     
     // Get the total number of days in the current month
@@ -54,7 +54,7 @@ const Workshops: React.FC = () => {
       {/* Background layer - fixed to cover full viewport including behind navbar */}
       <div className="fixed inset-0 bg-topography -z-10"></div>
 
-      {/* Hero Section */}
+      {/* Hero section */}
       <section className="pt-32 pb-0">
         <div className="container mx-auto px-6 text-center">
           <h1 
@@ -72,7 +72,7 @@ const Workshops: React.FC = () => {
         </div>
       </section>
 
-      {/* What Are Our Workshops? Section */}
+      {/* What are our workshops? section */}
       <section className="pt-8 pb-8 container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Title - now outside grid, not absolute positioned */}
@@ -88,11 +88,11 @@ const Workshops: React.FC = () => {
             </h2>
           </div>
 
-          {/* Feature Cards Grid - removed relative positioning and pt-16 */}
+          {/* Feature cards grid - removed relative positioning and pt-16 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1: Inclusive for All Levels */}
+            {/* Card 1: Inclusive for all levels */}
             <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              {/* McGill Red Accent Border Top */}
+              {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
               <div className="p-6">
@@ -120,9 +120,9 @@ const Workshops: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 2: One Core Skill Per Session */}
+            {/* Card 2: One core skill per session */}
             <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              {/* McGill Red Accent Border Top */}
+              {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
               <div className="p-6">
@@ -150,9 +150,9 @@ const Workshops: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3: Pushing Boundaries */}
+            {/* Card 3: Pushing boundaries */}
             <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              {/* McGill Red Accent Border Top */}
+              {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
               <div className="p-6">
@@ -183,11 +183,11 @@ const Workshops: React.FC = () => {
         </div>
       </section>
 
-      {/* Schedule and Location Section */}
+      {/* Schedule and location section */}
       <section className="pt-8 pb-16 container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-            {/* Where We Train - Left Side */}
+            {/* Where we train - left side */}
             <div className="lg:w-1/2 flex flex-col">
               <h2 
                 className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-4"
@@ -235,7 +235,7 @@ const Workshops: React.FC = () => {
               </div>
             </div>
 
-            {/* Workshop Schedule - Right Side */}
+            {/* Workshop schedule - right side */}
             <div className="lg:w-1/2 flex flex-col">
               <h2 
                 className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-4"
@@ -248,7 +248,7 @@ const Workshops: React.FC = () => {
               </h2>
 
               <div className="bg-white rounded-lg shadow-md p-6 mt-1">
-                {/* Month/Year Header */}
+                {/* Month/Year header */}
                 <div className="text-center mb-4">
                   <h3 
                     className="text-xl font-bold text-mcgill-dark"
@@ -300,7 +300,7 @@ const Workshops: React.FC = () => {
                   })}
                 </div>
 
-                {/* Helper Text */}
+                {/* Helper text */}
                 <p 
                   className="text-xs text-gray-500 text-center mb-4"
                   style={{ 
@@ -311,7 +311,7 @@ const Workshops: React.FC = () => {
                   Click on a highlighted Wednesday to see workshop details
                 </p>
 
-                {/* Selected Date Details */}
+                {/* Selected date details */}
                 <div className="bg-mcgill-rose p-4 rounded-xl border border-gray-200 shadow-sm min-h-[120px] flex flex-col justify-center">
                   {selectedDate ? (
                     <div className="animate-fade-in">

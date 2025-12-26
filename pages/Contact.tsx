@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-mcgill-rose">
-      {/* Hero Section - Matching FAQ/Team/Workshops style */}
+      {/* Hero Section */}
       <section className="bg-mcgill-rose pt-32 pb-12">
         <div className="container mx-auto px-6 text-center">
           <h1 
@@ -64,14 +64,14 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact form section */}
       <section className="pb-16 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-8 md:p-10">
               {!isSubmitted ? (
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                  {/* Hidden field for Web3Forms subject line */}
+                  {/* Hidden field for web3forms subject line */}
                   <input type="hidden" name="subject" value="New Contact Form Submission - McGill Calisthenics" />
                   
                   <div>
@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                     ></textarea>
                   </div>
 
-                  {/* Error Message */}
+                  {/* Error message */}
                   {error && (
                     <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
                       <AlertCircle className="w-5 h-5 flex-shrink-0" />
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
                   </button>
                 </form>
               ) : (
-                /* Success Message */
+                /* Success message */
                 <div className="py-12 text-center animate-fade-in">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mcgill-red/10 mb-6">
                     <CheckCircle className="w-8 h-8 text-mcgill-red" />

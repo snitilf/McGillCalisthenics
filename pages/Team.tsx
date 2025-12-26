@@ -25,7 +25,7 @@ interface TeamGroup {
 const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title, members }) => {
   return (
     <section className="mb-16">
-      {/* Section Title */}
+      {/* Section title */}
       <h2 
         className="mb-8 text-center text-3xl font-bold text-mcgill-dark"
         style={{ 
@@ -217,7 +217,7 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* Team Sections */}
+      {/* Team sections */}
       <section className="pb-8 bg-mcgill-rose">
         <div className="container mx-auto px-6 max-w-7xl">
           {teamGroups.map((group, index) => (

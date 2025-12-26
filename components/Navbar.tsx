@@ -48,12 +48,11 @@ const Navbar: React.FC = () => {
       }`}
     >
       {/* pointer-events-none on container, auto on children to allow clicking through empty spaces if needed, 
-          though nav usually sits on top. We keep standard block layout for simplicity. 
-      */}
+          though nav usually sits on top. we keep standard block layout for simplicity */}
       
-      {/* Desktop Layout: Left Nav | Center Logo | Right Nav */}
+      {/* Desktop layout: Left nav | Center logo | Right nav */}
       <div className="hidden md:flex items-center justify-between w-full pointer-events-auto">
-        {/* Left Side: Nav Links */}
+        {/* Left side: Nav links */}
         <div className="flex gap-8 flex-1 justify-start">
           {leftLinks.map((link) => (
             <NavLink
@@ -75,14 +74,14 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Center: Logo - Home Button */}
+        {/* Center: Logo - home button */}
         <div className="flex-1 flex justify-center">
           <Link to="/" className="pointer-events-auto">
             <img src="/images/logonotext.png" alt="McGill Calisthenics" className="h-8 md:h-10" />
           </Link>
         </div>
 
-        {/* Right Side: Nav Links + Register */}
+        {/* Right side: Nav links + register */}
         <div className="flex gap-8 flex-1 justify-end">
           {rightLinks.map((link) => (
             <NavLink
@@ -117,7 +116,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile: Logo + Menu Button */}
+      {/* Mobile: Logo + menu button */}
       <div className="md:hidden flex items-center gap-4 pointer-events-auto">
         <Link to="/" className="pointer-events-auto">
           <img src="/images/logonotext.png" alt="McGill Calisthenics" className="h-8" />
@@ -130,10 +129,10 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile overlay */}
       {mobileMenuOpen && (
         <div className="absolute top-0 left-0 w-full h-screen bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
-          {/* Left side links: Team, Workshops, Competitions */}
+          {/* Left side: Team, Workshops, Competitions */}
           {leftLinks.map((link) => (
             <NavLink
               key={link.path}
@@ -153,7 +152,7 @@ const Navbar: React.FC = () => {
               {link.label}
             </NavLink>
           ))}
-          {/* Right side links: FAQ, Contact */}
+          {/* Right side: FAQ, Contact */}
           {rightLinks.map((link) => (
             <NavLink
               key={link.path}

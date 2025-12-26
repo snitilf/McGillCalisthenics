@@ -37,7 +37,7 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-mcgill-rose">
-      {/* Hero Section - Matching Team/Workshops style */}
+      {/* Hero section */}
       <section className="bg-mcgill-rose pt-32 pb-12">
         <div className="container mx-auto px-6 text-center">
           <h1 
@@ -64,7 +64,7 @@ const FAQ: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Content Section */}
+      {/* FAQ content section */}
       <section className="pb-8 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto space-y-3">
@@ -133,7 +133,7 @@ const FAQ: React.FC = () => {
             })}
           </div>
 
-          {/* Contact Link - Closer to questions */}
+          {/* Contact link */}
           <div className="max-w-3xl mx-auto text-center pt-14 pb-8">
             <p 
               className="text-gray-500 mb-2"

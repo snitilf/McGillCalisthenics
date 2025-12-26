@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           
-          {/* left side: Logo + Text */}
+          {/* Left side: logo + text */}
           <div className="flex items-center gap-6">
              <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
              <div>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
              </div>
           </div>
 
-          {/* connect - now left-aligned internally */}
+          {/* connect - left-aligned internally */}
           <div className="flex items-center gap-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-mcgill-red">Connect</h4>
             <div className="flex space-x-4">
