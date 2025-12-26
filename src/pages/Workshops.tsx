@@ -145,7 +145,7 @@ const Workshops: React.FC = () => {
                     fontWeight: 600,
                   }}
                 >
-                  Each workshop centers around <strong className="text-mcgill-red">one core skill per session.</strong> After a comprehensive warm-up, we guide participants through a diverse range of exercises—from foundational movements like pull-ups, dips, and squats, to advanced skills such as muscle-ups, human flags, front levers, and handstand push-ups.
+                  Each workshop centers around <strong className="text-mcgill-red">one core skill per session.</strong> We teach the skill and its progressions tailored to your calisthenics level. Then, we finish with a strength and endurance circuit featuring foundational movements like pull-ups, chin-ups, muscle-ups, push-ups, dips, and squats.
                 </p>
               </div>
             </div>
