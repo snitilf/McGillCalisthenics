@@ -22,11 +22,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16">
             
-            {/* Left column: heading & graphic */}
+            {/* Left column: graphic */}
             <div className="lg:w-1/3">
-              <h2 className="text-5xl font-black uppercase leading-none mb-8 text-mcgill-dark">
-                
-              </h2>
               <div className={`w-full aspect-square rounded-lg relative overflow-hidden group ${
                 activeTab === 'about' ? 'bg-mcgill-rose' : 'bg-white'
               }`}>
@@ -36,7 +33,7 @@ const Home: React.FC = () => {
 
             {/* Right column: tabs */}
             <div className="lg:w-2/3 pt-0 lg:pt-8">
-              <div className="flex flex-wrap gap-8 mb-6">
+              <div className="flex flex-wrap gap-4 sm:gap-8 mb-6">
                 {(['about', 'philosophy', 'community'] as const).map((tab) => (
                   <button
                     key={tab}

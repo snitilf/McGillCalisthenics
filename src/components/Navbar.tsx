@@ -116,8 +116,8 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       
-      {/* Mobile: Logo + menu button */}
-      <div className="md:hidden flex items-center gap-4 pointer-events-auto">
+      {/* Mobile: Logo left, menu button right */}
+      <div className="md:hidden flex items-center justify-between w-full pointer-events-auto">
         <Link to="/" className="pointer-events-auto">
           <img src="/images/logonotext.png" alt="McGill Calisthenics" className="h-8" />
         </Link>
@@ -131,7 +131,22 @@ const Navbar: React.FC = () => {
 
       {/* Mobile overlay */}
       {mobileMenuOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
+        <div className="absolute top-0 left-0 w-full min-h-[100dvh] bg-mcgill-rose z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto">
+          {/* Home link */}
+          <NavLink
+            to="/"
+            className={({ isActive }) => 
+              `font-figtree font-bold text-3xl text-mcgill-dark ${
+                isActive ? 'text-mcgill-red' : ''
+              }`}
+            style={{
+              fontFamily: 'Schibsted Grotesk, sans-serif',
+              fontWeight: 700,
+            }}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Home
+          </NavLink>
           {/* Left side: Team, Workshops, Competitions */}
           {leftLinks.map((link) => (
             <NavLink

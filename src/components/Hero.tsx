@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         <h1 
             className="font-figtree font-extrabold italic leading-[0.85] tracking-tight"
             style={{ 
-                fontSize: 'clamp(4rem, 10vw, 12rem)',
+                fontSize: 'clamp(3.5rem, 10vw, 12rem)',
                 fontFamily: 'Figtree, sans-serif',
                 fontWeight: 800,
                 fontStyle: 'italic',
@@ -43,6 +43,13 @@ const Hero: React.FC = () => {
             <br />
             <span className="text-mcgill-red">Calisthenics</span>
         </h1>
+        {/* Mobile tagline - white text visible against image */}
+        <p 
+          className="md:hidden mt-6 text-white/90 text-sm leading-relaxed max-w-xs mx-auto"
+          style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+        >
+          Built Different. A student-led community dedicated to bodyweight training excellence.
+        </p>
       </div>
 
       {/* Left side content: est year - hidden on mobile, shown on larger screens */}

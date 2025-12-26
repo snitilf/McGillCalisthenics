@@ -41,7 +41,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {members.map((member) => (
           <div 
             key={member.id}
-            className="flex w-full flex-col items-center rounded-xl bg-white/40 p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+            className="flex w-full flex-col items-center rounded-xl bg-white/40 p-4 sm:p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
           >
 
             <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
@@ -233,7 +233,7 @@ const Team: React.FC = () => {
   return (
     <div className="min-h-screen bg-mcgill-rose">
       <section className="bg-mcgill-rose pt-32 pb-12">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
             style={{ 
@@ -260,7 +260,7 @@ const Team: React.FC = () => {
 
       {/* Team sections */}
       <section className="pb-8 bg-mcgill-rose">
-        <div className="container mx-auto px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           {teamGroups.map((group, index) => (
             <TeamSection 
               key={index} 

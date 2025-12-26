@@ -71,7 +71,7 @@ const Competitions: React.FC = () => {
     <div className="min-h-screen bg-mcgill-rose">
       {/* Hero section */}
       <section className="bg-mcgill-rose pt-32 pb-0">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-4"
             style={{ 
@@ -102,7 +102,7 @@ const Competitions: React.FC = () => {
 
       {/* USCCO Banner */}
       <section className="py-6 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <a 
             href="https://www.uscco.us/" 
             target="_blank" 
@@ -129,7 +129,7 @@ const Competitions: React.FC = () => {
 
       {/* Subdivisions Section */}
       <section className="py-8 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
             <h2 
               className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
@@ -154,7 +154,7 @@ const Competitions: React.FC = () => {
                 {/* McGill red accent border top */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                 
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center mb-4">
                     <sub.icon className="w-6 h-6 text-mcgill-red" />
                   </div>
@@ -181,7 +181,7 @@ const Competitions: React.FC = () => {
 
       {/* Benefits section */}
       <section className="py-8 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
             <h2 
               className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
@@ -206,7 +206,7 @@ const Competitions: React.FC = () => {
                 {/* McGill Red Accent Border Top */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                 
-                <div className="flex gap-4 p-6">
+                <div className="flex gap-4 p-4 sm:p-6">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center">
                       <benefit.icon className="w-6 h-6 text-mcgill-red" />
@@ -235,7 +235,7 @@ const Competitions: React.FC = () => {
 
       {/* Commitment section */}
       <section className="py-8 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
             <h2 
               className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-3"
@@ -261,7 +261,7 @@ const Competitions: React.FC = () => {
                   {/* McGill red accent border top */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
                   
-                  <div className="flex gap-4 p-6">
+                  <div className="flex gap-4 p-4 sm:p-6">
                     <div className="flex-shrink-0">
                       <div 
                         className="w-10 h-10 rounded-lg bg-mcgill-red/10 flex items-center justify-center text-mcgill-red font-bold text-sm"
@@ -294,7 +294,7 @@ const Competitions: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-8 pb-10 bg-mcgill-rose">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 
             className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-2"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}

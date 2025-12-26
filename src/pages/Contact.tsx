@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
     <div className="min-h-screen bg-mcgill-rose">
       {/* Hero Section */}
       <section className="bg-mcgill-rose pt-32 pb-12">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
             style={{ 
@@ -66,9 +66,9 @@ const Contact: React.FC = () => {
 
       {/* Contact form section */}
       <section className="pb-16 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-8 md:p-10">
+            <div className="p-5 sm:p-8 md:p-10">
               {!isSubmitted ? (
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* Hidden field for web3forms subject line */}

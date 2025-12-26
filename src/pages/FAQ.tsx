@@ -39,7 +39,7 @@ const FAQ: React.FC = () => {
     <div className="min-h-screen bg-mcgill-rose">
       {/* Hero section */}
       <section className="bg-mcgill-rose pt-32 pb-12">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <h1 
             className="font-figtree font-extrabold italic leading-[0.9] tracking-tight mb-6"
             style={{ 
@@ -66,7 +66,7 @@ const FAQ: React.FC = () => {
 
       {/* FAQ content section */}
       <section className="pb-8 bg-mcgill-rose">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto space-y-3">
             {FAQ_ITEMS.map((item, index) => {
               const isOpen = openIndex === index;
@@ -82,7 +82,7 @@ const FAQ: React.FC = () => {
                 >
                   <button
                     onClick={() => toggleQuestion(index)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left"
+                    className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left"
                   >
                     <h3 
                       className={`text-base md:text-lg font-bold pr-6 transition-colors duration-300 ${
@@ -115,7 +115,7 @@ const FAQ: React.FC = () => {
                       isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 pb-5">
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-5">
                       <div className="h-px bg-gray-100 mb-4" />
                       <p 
                         className="text-gray-600 leading-relaxed"

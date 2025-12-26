@@ -95,7 +95,7 @@ const Workshops: React.FC = () => {
               {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <Users className="w-8 h-8 text-mcgill-red" />
                 </div>
@@ -125,7 +125,7 @@ const Workshops: React.FC = () => {
               {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <Target className="w-8 h-8 text-mcgill-red" />
                 </div>
@@ -155,7 +155,7 @@ const Workshops: React.FC = () => {
               {/* McGill red accent border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
               
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <TrendingUp className="w-8 h-8 text-mcgill-red" />
                 </div>
@@ -220,7 +220,7 @@ const Workshops: React.FC = () => {
                     Montreal, QC
                   </p>
                 </div>
-                <div className="relative w-full flex-1" style={{ minHeight: '450px' }}>
+                <div className="relative w-full flex-1 min-h-[300px] lg:min-h-[450px]">
                   <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.838795015198!2d-73.55405329999999!3d45.493190899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b9d2a54417b%3A0x70b904106b910831!2sDe%20la%20Commune%20outdoor%20gym!5e0!3m2!1sen!2sca!4v1766438721710!5m2!1sen!2sca" 
                     width="100%" 
@@ -247,7 +247,7 @@ const Workshops: React.FC = () => {
                 Workshop <span className="text-mcgill-red">Schedule.</span>
               </h2>
 
-              <div className="bg-white rounded-lg shadow-md p-6 mt-1">
+              <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mt-1">
                 {/* Month/Year header */}
                 <div className="text-center mb-4">
                   <h3 
@@ -262,11 +262,11 @@ const Workshops: React.FC = () => {
                 </div>
 
                 {/* Grid Calendar */}
-                <div className="grid grid-cols-7 gap-1.5 mb-4 text-center">
+                <div className="grid grid-cols-7 gap-1 sm:gap-1.5 mb-4 text-center">
                   {['S','M','T','W','T','F','S'].map((d, i) => (
                     <span 
                       key={i} 
-                      className="font-bold text-gray-400 text-xs"
+                      className="font-bold text-gray-400 text-xs py-1"
                       style={{ 
                         fontFamily: 'Schibsted Grotesk, sans-serif',
                         fontWeight: 700,
@@ -283,7 +283,7 @@ const Workshops: React.FC = () => {
                         disabled={!d.day || !d.isWednesday}
                         onClick={() => d.day && handleDayClick(d.day)}
                         className={`
-                          aspect-square flex items-center justify-center text-xs font-bold rounded-lg transition-all
+                          aspect-square min-h-[40px] flex items-center justify-center text-xs sm:text-sm font-bold rounded-lg transition-all
                           ${!d.day ? 'invisible' : ''}
                           ${d.isWednesday && !isSelected ? 'bg-mcgill-red/10 border-2 border-mcgill-red text-mcgill-red hover:bg-mcgill-red hover:text-white cursor-pointer shadow-sm' : ''}
                           ${d.isWednesday && isSelected ? 'bg-mcgill-red text-white border-2 border-mcgill-red ring-4 ring-red-200 cursor-pointer shadow-lg' : ''}

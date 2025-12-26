@@ -5,7 +5,7 @@ import { SOCIAL_LINKS } from '../constants';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-mcgill-dark py-8 border-t border-gray-200">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           
           {/* Left side: logo + text */}
@@ -29,10 +29,10 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-mcgill-red">Connect</h4>
             <div className="flex space-x-4">
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Instagram size={20} /></a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Facebook size={20} /></a>
-              <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors"><MessageCircle size={20} /></a>
-              <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors"><Mail size={20} /></a>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Instagram size={24} /></a>
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Facebook size={24} /></a>
+              <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><MessageCircle size={24} /></a>
+              <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Mail size={24} /></a>
             </div>
             <span 
               className="text-xs text-gray-600"
