@@ -109,13 +109,13 @@ const Workshops: React.FC = () => {
                   Inclusive for All Levels
                 </h3>
                 <p 
-                  className="text-base text-gray-600 leading-relaxed"
+                  className="text-base text-gray-600 leading-relaxed text-justify"
                   style={{ 
                     fontFamily: 'Schibsted Grotesk, sans-serif',
                     fontWeight: 600,
                   }}
                 >
-                  Our weekly calisthenics workshops are <strong className="text-mcgill-red">designed to be inclusive for all fitness levels.</strong> Each session is carefully structured to accommodate everyone, with participants divided into three skill-based groups: beginner, intermediate, and advanced.
+                  Our weekly calisthenics workshops are <strong className="text-mcgill-red">designed to be inclusive for all fitness levels.</strong> Each session is carefully structured to accommodate everyone, with participants divided into three skill-based groups: beginner, intermediate, and advanced. No prior experience is required—just bring your energy and willingness to learn.
                 </p>
               </div>
             </div>
@@ -139,13 +139,13 @@ const Workshops: React.FC = () => {
                   One Core Skill Per Session
                 </h3>
                 <p 
-                  className="text-base text-gray-600 leading-relaxed"
+                  className="text-base text-gray-600 leading-relaxed text-justify"
                   style={{ 
                     fontFamily: 'Schibsted Grotesk, sans-serif',
                     fontWeight: 600,
                   }}
                 >
-                  Each workshop centers around <strong className="text-mcgill-red">one core skill per session</strong>. After a comprehensive warm-up, we guide participants through a diverse range of exercises—from foundational movements like pull-ups, dips, and squats, to advanced skills such as muscle-ups, human flags, front levers, and handstand push-ups.
+                  Each workshop centers around <strong className="text-mcgill-red">one core skill per session.</strong> After a comprehensive warm-up, we guide participants through a diverse range of exercises—from foundational movements like pull-ups, dips, and squats, to advanced skills such as muscle-ups, human flags, front levers, and handstand push-ups.
                 </p>
               </div>
             </div>
@@ -169,13 +169,13 @@ const Workshops: React.FC = () => {
                   Pushing Boundaries
                 </h3>
                 <p 
-                  className="text-base text-gray-600 leading-relaxed"
+                  className="text-base text-gray-600 leading-relaxed text-justify"
                   style={{ 
                     fontFamily: 'Schibsted Grotesk, sans-serif',
                     fontWeight: 600,
                   }}
                 >
-                  We believe in <strong className="text-mcgill-red">pushing boundaries and inspiring excellence</strong>. Each session concludes with a dedicated cooldown and stretching period, ensuring a well-rounded calisthenics experience.
+                  We believe in <strong className="text-mcgill-red">pushing boundaries and inspiring excellence</strong> in every athlete. Our coaches provide personalized feedback to help you break through plateaus and reach new milestones. Each session concludes with dedicated cooldown and stretching, ensuring a well-rounded calisthenics experience.
                 </p>
               </div>
             </div>
@@ -353,4 +353,3 @@ const Workshops: React.FC = () => {
 };
 
 export default Workshops;
-
