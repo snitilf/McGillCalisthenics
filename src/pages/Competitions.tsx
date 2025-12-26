@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Dumbbell, Target, Sparkles, Trophy, Users, Medal, ChevronRight } from 'lucide-react';
+import { Flame, Dumbbell, Target, Sparkles, Trophy, Users, Medal, ChevronRight, ExternalLink } from 'lucide-react';
 
 const Competitions: React.FC = () => {
   const subdivisions = [
@@ -89,7 +89,7 @@ const Competitions: React.FC = () => {
             className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed mb-3"
             style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
           >
-            McGill Intercollegiate Team.
+            Represent calisthenics as a sport for McGill University.
           </p>
 
           <p 
@@ -100,8 +100,35 @@ const Competitions: React.FC = () => {
         </div>
       </section>
 
-      {/* Subdivisions Section */}
+      {/* USCCO Banner */}
       <section className="py-6 bg-mcgill-rose">
+        <div className="container mx-auto px-6">
+          <a 
+            href="https://www.uscco.us/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-white rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300 max-w-2xl mx-auto border border-gray-100 hover:border-mcgill-red/20"
+          >
+            <img 
+              src="/images/USCCO_Logo.svg" 
+              alt="USCCO - US Collegiate Calisthenics Organization" 
+              className="h-10 sm:h-12 w-auto"
+            />
+            <div className="flex items-center gap-2 text-center sm:text-left">
+              <span 
+                className="text-sm sm:text-base text-gray-600 group-hover:text-mcgill-dark transition-colors"
+                style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+              >
+                Official member of the US Collegiate Calisthenics Organization
+              </span>
+              <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-mcgill-red transition-colors flex-shrink-0" />
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* Subdivisions Section */}
+      <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
@@ -153,7 +180,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* Benefits section */}
-      <section className="py-6 bg-mcgill-rose">
+      <section className="py-8 bg-mcgill-rose">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
             <h2 
@@ -266,7 +293,7 @@ const Competitions: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-6 pb-10 bg-mcgill-rose">
+      <section className="py-8 pb-10 bg-mcgill-rose">
         <div className="container mx-auto px-6 text-center">
           <h2 
             className="text-3xl md:text-4xl font-bold text-mcgill-dark mb-2"
@@ -306,4 +333,3 @@ const Competitions: React.FC = () => {
 };
 
 export default Competitions;
-
