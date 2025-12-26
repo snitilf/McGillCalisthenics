@@ -52,19 +52,12 @@ const Hero: React.FC = () => {
         </p>
       </div>
 
-      {/* RIGHT SIDE CONTENT: Tagline - repositioned to stay outside image on all screens */}
+      {/* RIGHT SIDE CONTENT: Tagline - hidden on mobile, shown on larger screens */}
       <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-right hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
         <p className="text-black/90 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
           Built Different.
           <br />
           A student-led community dedicated to bodyweight training excellence at McGill University.
-        </p>
-      </div>
-
-      {/* MOBILE: Tagline at bottom center - shown only on mobile */}
-      <div className="absolute bottom-6 left-0 right-0 z-10 text-center px-6 md:hidden">
-        <p className="text-black/90 text-xs leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-          Built Different. A student-led community dedicated to bodyweight training excellence at McGill University.
         </p>
       </div>
     </section>
