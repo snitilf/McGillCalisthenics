@@ -156,69 +156,73 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* tabs and content */}
-            <div className="lg:w-2/3 pt-0 lg:pt-8">
-              <div className="flex flex-wrap gap-4 sm:gap-8 mb-6">
-                {(['about', 'philosophy', 'community'] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`pb-4 text-xl tracking-wide transition-all duration-300 relative font-figtree ${
-                      activeTab === tab ? 'text-mcgill-red' : 'text-gray-600 hover:text-mcgill-dark'
-                    }`}
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                  >
-                    {tab === 'about' && 'About Us'}
-                    {tab === 'philosophy' && 'Training Philosophy'}
-                    {tab === 'community' && 'Our Community'}
-                    {/* active underline */}
-                    <span className={`absolute bottom-[-2px] left-0 w-full h-[2px] transition-colors duration-300 ${
-                      activeTab === tab ? 'bg-mcgill-red' : 'bg-gray-300'
-                    }`}></span>
-                  </button>
-                ))}
-              </div>
+            {/* tabs and content - aspect-[2/1] matches image height (2/3 width ÷ 1/3 height = 2:1) */}
+            <div className="lg:w-2/3">
+              <div className="aspect-[2/1] flex flex-col overflow-hidden">
+                {/* tabs - fixed height */}
+                <div className="flex-shrink-0 flex flex-wrap gap-4 sm:gap-8 mb-5">
+                  {(['about', 'philosophy', 'community'] as const).map((tab) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`pb-3 text-xl tracking-wide transition-all duration-300 relative font-figtree ${
+                        activeTab === tab ? 'text-mcgill-red' : 'text-gray-600 hover:text-mcgill-dark'
+                      }`}
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      {tab === 'about' && 'About Us'}
+                      {tab === 'philosophy' && 'Training Philosophy'}
+                      {tab === 'community' && 'Our Community'}
+                      {/* active underline */}
+                      <span className={`absolute bottom-[-2px] left-0 w-full h-[2px] transition-colors duration-300 ${
+                        activeTab === tab ? 'bg-mcgill-red' : 'bg-gray-300'
+                      }`}></span>
+                    </button>
+                  ))}
+                </div>
 
-              <div className="min-h-[300px]">
-                {activeTab === 'about' && (
-                  <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. We welcome everyone from complete beginners to advanced athletes looking to refine their craft.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Whether you're working on your first pull-up or mastering complex movements like levers and planches, our club provides the coaching, progressions, and supportive environment you need to reach your goals safely and effectively.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      We host weekly workshops, university & community events, and competitions throughout the year. Come meet like-minded athletes, learn proper technique, and build lasting strength—no gym machines required.
-                    </p>
-                  </div>
-                )}
-                {activeTab === 'philosophy' && (
-                  <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Every session begins with a thorough full-body warm-up designed to prepare your joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and minimize injury risk.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Then we teach specific skills and progressions, breaking them down into clear steps. We build strength with structured workouts that target the exact muscles and movement patterns you need for steady, sustainable progress.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Each session concludes with dedicated cooldown and stretching. Our approach balances pushing your limits with smart recovery, ensuring you build strength consistently without burning out or getting injured along the way.
-                    </p>
-                  </div>
-                )}
-                {activeTab === 'community' && (
-                  <div className="animate-fade-in space-y-6">
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      This club is about lifting each other up. We show up, put in the work, and motivate one another to improve every week. Progress is more fun and sustainable when you have a supportive team behind you.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      Whether you're trying to unlock your first muscle-up or chasing skills like handstands and handstand push-ups, you'll find training partners, accountability, and encouragement here. No one trains alone at McGill Calisthenics.
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                      We train together, celebrate victories, and grow stronger as a community. From casual Wednesday sessions to organized competitions, there's always an opportunity to connect with fellow athletes who share your passion.
-                    </p>
-                  </div>
-                )}
+                {/* content - fills remaining space with scroll if needed */}
+                <div className="flex-1 overflow-y-auto min-h-0">
+                  {activeTab === 'about' && (
+                    <div className="animate-fade-in space-y-4">
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. We welcome everyone from complete beginners to advanced athletes looking to refine their craft.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Whether you're working on your first pull-up or mastering complex movements like levers and planches, our club provides the coaching, progressions, and supportive environment you need to reach your goals safely and effectively.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        We host weekly workshops, university & community events, and competitions throughout the year. Come meet like-minded athletes, learn proper technique, and build lasting strength—no gym machines required.
+                      </p>
+                    </div>
+                  )}
+                  {activeTab === 'philosophy' && (
+                    <div className="animate-fade-in space-y-4">
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Every session begins with a thorough full-body warm-up designed to prepare your joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and minimize injury risk.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Then we teach specific skills and progressions, breaking them down into clear steps. We build strength with structured workouts that target the exact muscles and movement patterns you need for steady, sustainable progress.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Each session concludes with dedicated cooldown and stretching. Our approach balances pushing your limits with smart recovery, ensuring you build strength consistently without burning out or getting injured along the way.
+                      </p>
+                    </div>
+                  )}
+                  {activeTab === 'community' && (
+                    <div className="animate-fade-in space-y-4">
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        This club is about lifting each other up. We show up, put in the work, and motivate one another to improve every week. Progress is more fun and sustainable when you have a supportive team behind you.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        Whether you're trying to unlock your first muscle-up or chasing skills like handstands and handstand push-ups, you'll find training partners, accountability, and encouragement here. No one trains alone at McGill Calisthenics.
+                      </p>
+                      <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
+                        We train together, celebrate victories, and grow stronger as a community. From casual Wednesday sessions to organized competitions, there's always an opportunity to connect with fellow athletes who share your passion.
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
