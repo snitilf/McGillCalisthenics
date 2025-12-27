@@ -226,10 +226,10 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* cta */}
-      <section className="bg-mcgill-red py-12 md:py-24 relative overflow-hidden">
+      {/* cta - smaller on desktop */}
+      <section className="bg-mcgill-red py-10 md:py-14 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black text-mcgill-white uppercase mb-4 md:mb-8 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-mcgill-white uppercase mb-3 md:mb-5 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Ready to Start?</h2>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer">
             <button className="bg-mcgill-white text-mcgill-red border-2 border-mcgill-red px-5 py-2 sm:px-8 sm:py-3 text-sm sm:text-base font-black uppercase tracking-wider hover:bg-mcgill-dark hover:text-white transition-all duration-300 font-figtree" style={{ fontFamily: 'Figtree, sans-serif', fontWeight: 900 }}>Follow our journey</button>
           </a>

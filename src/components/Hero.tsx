@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* tagline - desktop only */}
-      <div className="absolute right-4 lg:right-16 bottom-8 lg:bottom-16 z-10 text-left hidden md:block" style={{ maxWidth: 'calc(50% - 17.5% - 2rem)' }}>
+      <div className="absolute left-[68%] lg:left-[75%] bottom-[18%] lg:bottom-[10%] z-10 text-left hidden md:block w-[28%] lg:w-[20%]">
         <p className="text-black/90 text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
           Built Different.
           <br />
@@ -65,4 +65,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
