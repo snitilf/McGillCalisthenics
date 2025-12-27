@@ -85,7 +85,7 @@ const Team: React.FC = () => {
         { 
           id: '1', 
           name: 'Noah Havrot-Landry', 
-          role: 'Founder & President', 
+          role: 'Co-Founder & President', 
           image: '/images/execs/Noah.jpg',
           offsetX: 50,
           offsetY: 20,
@@ -181,7 +181,7 @@ const Team: React.FC = () => {
         { 
           id: '10', 
           name: 'Alek Tanev', 
-          role: 'Founder & Coach', 
+          role: 'Co-Founder & Coach', 
           image: '/images/execs/Alek.jpg',
           offsetX: 50,
           offsetY: 50,
