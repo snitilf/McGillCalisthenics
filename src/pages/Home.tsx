@@ -10,9 +10,9 @@ const Home: React.FC = () => {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const tabImages: Record<typeof activeTab, string | string[]> = {
-    about: '/images/logonotext.png',
-    philosophy: '/images/handstand.jpg',
-    community: ['/images/workshops/IMG_8856.jpeg', 'public/images/workshops/IMG_8906.jpeg'],
+    about: '/images/logonotext.webp',
+    philosophy: '/images/handstand.webp',
+    community: ['/images/workshops/IMG_8856.webp', '/images/workshops/IMG_8906.webp'],
   };
 
   const sections = [

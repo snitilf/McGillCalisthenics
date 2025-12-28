@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         style={{ height: '100%' }}
       >
          <img 
-            src="/images/mcgillflag.jpg" 
+            src="/images/mcgillflag.webp" 
             alt="McGill Calisthenics"
             className="w-full h-full object-cover"
             loading="lazy"
