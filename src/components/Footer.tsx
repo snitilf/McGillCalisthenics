@@ -27,7 +27,15 @@ const Footer: React.FC = () => {
           
           {/* logo and tagline */}
           <div className="flex items-center gap-6">
-             <img src="/images/logo.png" alt="McGill Calisthenics Club" className="h-20 object-contain" />
+             <img 
+               src="/images/logo.webp" 
+               alt="McGill Calisthenics Club" 
+               className="h-20 object-contain"
+               loading="lazy"
+               decoding="async"
+               width="80"
+               height="80"
+             />
              <div>
                <h3 className="text-xl font-black tracking-tighter mb-0">McGill <span className="text-mcgill-red">Calisthenics</span></h3>
                <p 

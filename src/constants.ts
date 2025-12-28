@@ -10,15 +10,15 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { id: '1', name: 'Noah Havrot-Landry', role: 'President', image: '/images/execs/Noah.jpg' },
-  { id: '2', name: 'Charles Morin', role: 'VP Internal', image: '/images/execs/Charles.png' },
-  { id: '3', name: 'Adrian Marinov', role: 'Co-VP External', image: '/images/execs/Adrian.jpg' },
-  { id: '4', name: 'Louis Philippe Bejjani', role: 'Co-VP External', image: '/images/execs/Louis.jpg' },
-  { id: '5', name: 'Filip Snítil', role: 'VP Tech', image: '/images/execs/Filip.jpg' },
-  { id: '6', name: 'Natalia Andrea Lucena Henao', role: 'VP Finance', image: '/images/execs/Natalia.jpg' },
-  { id: '7', name: 'Mia Desgagné', role: 'VP Communications', image: '/images/execs/Mia.jpg' },
-  { id: '8', name: 'Katya Shubochkin', role: 'VP Operations & Logistics', image: '/images/execs/Katya.jpg' },
-  { id: '9', name: 'Niko Vriniotis', role: 'Team Manager', image: '/images/execs/Niko.jpg' },
+  { id: '1', name: 'Noah Havrot-Landry', role: 'President', image: '/images/execs/Noah.webp' },
+  { id: '2', name: 'Charles Morin', role: 'VP Internal', image: '/images/execs/Charles.webp' },
+  { id: '3', name: 'Adrian Marinov', role: 'Co-VP External', image: '/images/execs/Adrian.webp' },
+  { id: '4', name: 'Louis Philippe Bejjani', role: 'Co-VP External', image: '/images/execs/Louis.webp' },
+  { id: '5', name: 'Filip Snítil', role: 'VP Tech', image: '/images/execs/Filip.webp' },
+  { id: '6', name: 'Natalia Andrea Lucena Henao', role: 'VP Finance', image: '/images/execs/Natalia.webp' },
+  { id: '7', name: 'Mia Desgagné', role: 'VP Communications', image: '/images/execs/Mia.webp' },
+  { id: '8', name: 'Katya Shubochkin', role: 'VP Operations & Logistics', image: '/images/execs/Katya.webp' },
+  { id: '9', name: 'Niko Vriniotis', role: 'Team Manager', image: '/images/execs/Niko.webp' },
 ];
 
 // modulo-based workshop topics (cycles through topics)
@@ -65,4 +65,3 @@ export const SOCIAL_LINKS = {
   whatsapp: 'https://chat.whatsapp.com/LooJj9ridYE6DZN5rSLXFo',
   email: 'calisthenics.vpcommunications@mcgilleus.ca'
 };
-

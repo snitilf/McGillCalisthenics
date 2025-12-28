@@ -69,7 +69,13 @@ const Navbar: React.FC = () => {
         {/* logo */}
         <div className="flex-1 flex justify-center">
           <Link to="/" className="pointer-events-auto">
-            <img src="/images/logonotext.png" alt="McGill Calisthenics" className="h-8 md:h-10" />
+            <img 
+              src="/images/logonotext.webp" 
+              alt="McGill Calisthenics" 
+              className="h-8 md:h-10"
+              width="40"
+              height="40"
+            />
           </Link>
         </div>
 
@@ -111,7 +117,13 @@ const Navbar: React.FC = () => {
       {/* mobile nav */}
       <div className="md:hidden flex items-center justify-between w-full pointer-events-auto">
         <Link to="/" className="pointer-events-auto">
-          <img src="/images/logonotext.png" alt="McGill Calisthenics" className="h-8" />
+          <img 
+            src="/images/logonotext.webp" 
+            alt="McGill Calisthenics" 
+            className="h-8"
+            width="32"
+            height="32"
+          />
         </Link>
         <button 
           className="text-mcgill-dark pointer-events-auto"
@@ -205,4 +217,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
