@@ -44,6 +44,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
                 src={member.image} 
                 alt={member.name}
                 className="h-full w-full object-cover"
+                loading="lazy"
                 style={{ 
                   objectPosition: `${member.offsetX ?? 50}% ${member.offsetY ?? 50}%`,
                   transform: `scale(${member.zoom ?? 1})`,

@@ -151,6 +151,7 @@ const Home: React.FC = () => {
                     src={typeof tabImages[activeTab] === 'string' ? tabImages[activeTab] : tabImages[activeTab][0]} 
                     alt={activeTab === 'about' ? 'Logo' : activeTab === 'philosophy' ? 'Handstand' : 'Community'} 
                     className="w-full h-full object-cover transition-all duration-500" 
+                    loading="lazy"
                   />
                 )}
               </div>
