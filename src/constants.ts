@@ -32,12 +32,15 @@ export const WORKSHOP_TOPICS: WorkshopTopic[] = [
 // Manual workshop topics (date-based mapping)
 // Format: 'YYYY-MM-DD' => topic name
 export const MANUAL_WORKSHOP_TOPICS: Record<string, string> = {
-  // add dates manually:
   '2025-12-03': 'Team Training',
   '2025-12-10': 'Team Training',
   '2025-12-17': 'Team Training',
   '2025-12-24': 'Team Training',
   '2025-12-31': 'Team Training',
+  '2026-06-07': 'Handstands',
+  '2026-06-14': 'Pull-ups & Muscle-ups',
+  '2026-06-21': 'Open Training',
+  '2026-06-28': 'Human Flag & Planche',
 };
 
 // helper function to get workshop topic on workshops page
@@ -60,8 +63,9 @@ export const getWorkshopTopic = (date: Date): string => {
 
 export const SOCIAL_LINKS = {
   instagram: 'https://www.instagram.com/mcgillcalisthenics/',
-  messenger: 'https://m.me/j/AbZMbapjVfoEO32a/',
+  messenger: 'https://www.instagram.com/j/AbaHC00Jm6FBpgrN/',
   facebook: 'https://www.facebook.com/people/McGill-Calisthenics-Club/61571444662955/',
   whatsapp: 'https://chat.whatsapp.com/LooJj9ridYE6DZN5rSLXFo',
+  linkedin: 'https://ca.linkedin.com/company/mcgill-calisthenics-club',
   email: 'calisthenics.vpcommunications@mcgilleus.ca'
 };

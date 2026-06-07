@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Mail, Facebook, MessageCircle } from 'lucide-react';
+import { Instagram, Mail, Facebook, MessageCircle, Linkedin } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Footer: React.FC = () => {
@@ -12,13 +12,14 @@ const Footer: React.FC = () => {
             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Instagram size={20} /></a>
             <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Facebook size={20} /></a>
             <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><MessageCircle size={20} /></a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Linkedin size={20} /></a>
             <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Mail size={20} /></a>
           </div>
           <span 
             className="text-xs text-gray-500"
             style={{ fontWeight: 500 }}
           >
-            © 2025 McGill Calisthenics
+            © 2026 McGill Calisthenics
           </span>
         </div>
 
@@ -57,13 +58,14 @@ const Footer: React.FC = () => {
               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Instagram size={24} /></a>
               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Facebook size={24} /></a>
               <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><MessageCircle size={24} /></a>
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Linkedin size={24} /></a>
               <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Mail size={24} /></a>
             </div>
             <span 
               className="text-xs text-gray-600"
               style={{ fontWeight: 600 }}
             >
-              © 2025
+              © 2026
             </span>
           </div>
 

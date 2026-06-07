@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Dumbbell, Target, Sparkles, Trophy, Users, Medal, ChevronRight, ExternalLink } from 'lucide-react';
+import { Flame, Dumbbell, Target, Sparkles, Trophy, Users, Medal, ExternalLink } from 'lucide-react';
 
 const Competitions: React.FC = () => {
   const subdivisions = [
@@ -92,11 +92,6 @@ const Competitions: React.FC = () => {
             Represent calisthenics as a sport for McGill University.
           </p>
 
-          <p 
-            className="text-mcgill-red text-sm md:text-base font-bold tracking-wide"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
-          >
-          </p>
         </div>
       </section>
 
@@ -309,21 +304,50 @@ const Competitions: React.FC = () => {
             Join McGill's Intercollegiate Calisthenics Team and represent the university.
           </p>
 
-          <button 
-            disabled
-            className="inline-flex items-center gap-2 bg-gray-400 text-white px-8 py-3 font-bold uppercase tracking-wider border-2 border-gray-400 cursor-not-allowed opacity-60"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-          >
-            Apply Now
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          <div className="inline-flex flex-col items-center gap-5">
+            {/* bracketed status block */}
+            <div className="relative px-10 py-5">
+              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-mcgill-red/50"></div>
+              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-mcgill-red/50"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-mcgill-red/50"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-mcgill-red/50"></div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="h-px flex-1 bg-gray-300"></div>
+                <span
+                  className="text-xs uppercase tracking-widest text-gray-400 font-bold"
+                  style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                >
+                  Status
+                </span>
+                <div className="h-px flex-1 bg-gray-300"></div>
+              </div>
+              <p
+                className="text-xl font-bold uppercase tracking-wider text-mcgill-dark text-center"
+                style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+              >
+                Applications <span className="text-mcgill-red">Closed</span>
+              </p>
+            </div>
 
-          <p 
-            className="text-xs text-gray-600 mt-4"
-            style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
-          >
-            Applications reviewed on a rolling basis
-          </p>
+            {/* instagram cta */}
+            <p
+              className="text-sm text-gray-500 text-center max-w-xs"
+              style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
+            >
+              Follow{' '}
+              <a
+                href="https://www.instagram.com/mcgillcalisthenics/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-mcgill-dark hover:text-mcgill-red transition-colors duration-200 inline-flex items-center gap-0.5"
+                style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+              >
+                @mcgillcalisthenics
+                <ExternalLink className="w-3 h-3 ml-0.5" />
+              </a>
+              {' '}for updates on the next recruitment cycle.
+            </p>
+          </div>
         </div>
       </section>
     </div>

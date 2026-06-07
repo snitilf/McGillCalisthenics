@@ -20,7 +20,7 @@ const Workshops: React.FC = () => {
 
     // empty slots for days before the 1st
     for (let i = 0; i < firstDayOfMonth; i++) {
-        days.push({ day: null, isWednesday: false });
+        days.push({ day: null, isSunday: false });
     }
     
     // all days of the month
@@ -28,7 +28,7 @@ const Workshops: React.FC = () => {
         const dayOfWeek = new Date(currentYear, currentMonth, i).getDay();
         days.push({ 
             day: i, 
-            isWednesday: dayOfWeek === WeekDay.Wednesday 
+            isSunday: dayOfWeek === WeekDay.Sunday
         });
     }
     return days;
@@ -59,7 +59,7 @@ const Workshops: React.FC = () => {
               fontStyle: 'italic',
             }}
           >
-            <span className="text-mcgill-black">Our </span>
+            <span className="text-mcgill-dark">Our </span>
             <span className="text-mcgill-red">Workshops.</span>
           </h1>
         </div>
@@ -266,20 +266,20 @@ const Workshops: React.FC = () => {
                   {calendarDays.map((d, i) => {
                     const isSelected = selectedDate?.getDate() === d.day && selectedDate?.getMonth() === currentMonth;
                     return (
-                      <button 
+                      <button
                         key={i}
-                        disabled={!d.day || !d.isWednesday}
+                        disabled={!d.day || !d.isSunday}
                         onClick={() => d.day && handleDayClick(d.day)}
                         className={`
                           aspect-square min-h-[40px] flex items-center justify-center text-xs sm:text-sm font-bold rounded-lg transition-all
                           ${!d.day ? 'invisible' : ''}
-                          ${d.isWednesday && !isSelected ? 'bg-mcgill-red/10 border-2 border-mcgill-red text-mcgill-red hover:bg-mcgill-red hover:text-white cursor-pointer shadow-sm' : ''}
-                          ${d.isWednesday && isSelected ? 'bg-mcgill-red text-white border-2 border-mcgill-red ring-4 ring-red-200 cursor-pointer shadow-lg' : ''}
-                          ${!d.isWednesday ? 'text-gray-400 cursor-default' : ''}
+                          ${d.isSunday && !isSelected ? 'bg-mcgill-red/10 border-2 border-mcgill-red text-mcgill-red hover:bg-mcgill-red hover:text-white cursor-pointer shadow-sm' : ''}
+                          ${d.isSunday && isSelected ? 'bg-mcgill-red text-white border-2 border-mcgill-red ring-4 ring-red-200 cursor-pointer shadow-lg' : ''}
+                          ${!d.isSunday ? 'text-gray-400 cursor-default' : ''}
                         `}
-                        style={{ 
+                        style={{
                           fontFamily: 'Schibsted Grotesk, sans-serif',
-                          fontWeight: d.isWednesday ? 700 : 400,
+                          fontWeight: d.isSunday ? 700 : 400,
                         }}
                       >
                         {d.day}
@@ -296,7 +296,7 @@ const Workshops: React.FC = () => {
                     fontWeight: 500,
                   }}
                 >
-                  Click on a highlighted Wednesday to see workshop details
+                  Click on a highlighted Sunday to see workshop details
                 </p>
 
                 {/* selected date info */}
@@ -310,10 +310,10 @@ const Workshops: React.FC = () => {
                           fontWeight: 800,
                         }}
                       >
-                        Wednesday, {monthNames[selectedDate.getMonth()]} {selectedDate.getDate()}, {selectedDate.getFullYear()}
+                        Sunday, {monthNames[selectedDate.getMonth()]} {selectedDate.getDate()}, {selectedDate.getFullYear()}
                       </h4>
                       <div className="flex items-center text-gray-600 mb-2 text-sm" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
-                        <Clock className="w-3 h-3 mr-2" /> 6:30 p.m. – 8:00 p.m.
+                        <Clock className="w-3 h-3 mr-2" /> 5:00 p.m.
                       </div>
                       <div className="inline-block bg-mcgill-red text-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}>
                         Topic: {getWorkshopTopic(selectedDate)}

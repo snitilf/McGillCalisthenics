@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQ_ITEMS = [
@@ -11,8 +12,8 @@ const FAQ_ITEMS = [
     answer: "General club membership is completely free. However, athletes selected for the competitive Intercollegiate Calisthenics Team are required to pay team-specific dues, which are detailed during the registration process."
   },
   {
-    question: "Will there be workshops during the Winter 2026 semester?",
-    answer: "For the Winter 2026 semester, we're moving indoors with coached classes open to all skill levels, while our international competitive team continues specialized training. Our free outdoor community workshops will officially resume in Summer 2026. Stay tuned to our socials for the exact kickoff date."
+    question: "Are there workshops during Summer 2026?",
+    answer: "Yes! Workshops are currently running during Summer 2026 and are open to all skill levels. We post all the details—including dates, times, and topics—on our Instagram page (@mcgillcalisthenics). Give us a follow to stay up to date."
   },
   {
     question: "What is the difference between the Club and the Team?",
@@ -24,7 +25,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "How do I join the Executive Team?",
-    answer: "Our executive board for the 2025–2026 academic year has been finalized. If you are interested in a leadership role, applications for the 2026–2027 cycle will open in late Summer 2026."
+    answer: "All executive roles for the 2026–2027 academic year have been filled. If you are interested in a leadership role, applications for the 2027–2028 cycle will open in April 2027."
   }
 ];
 
@@ -141,13 +142,13 @@ const FAQ: React.FC = () => {
             >
               Can't find what you're looking for?
             </p>
-            <a 
-              href="/#/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center text-mcgill-red font-bold hover:text-mcgill-dark transition-colors duration-300"
               style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
             >
               Get in touch with us →
-            </a>
+            </Link>
           </div>
         </div>
       </section>

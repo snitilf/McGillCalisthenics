@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const lastScrollRef = useRef(0);
   const location = useLocation();
 
   // left nav links
@@ -24,17 +24,18 @@ const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
-  // hide navbar when scrolling down, show when at top
+  // hide navbar on scroll-down, show on scroll-up (always visible at top)
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY <= 80);
-      setLastScrollY(currentScrollY);
+      const currentY = window.scrollY;
+      if (currentY <= 80) setIsVisible(true);
+      else setIsVisible(currentY < lastScrollRef.current);
+      lastScrollRef.current = currentY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <nav 
@@ -100,7 +101,7 @@ const Navbar: React.FC = () => {
             </NavLink>
           ))}
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf-ukBEfFMjiUunl6uppZhCIrpm9awe94pr5BpayGZ8wE6Ytg/viewform" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide"
@@ -197,7 +198,7 @@ const Navbar: React.FC = () => {
               </NavLink>
             ))}
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd5T0OMTWnBxIo8WqaZ-pJLxklhQKtw0ZNljD5lD8yJ3_N5gA/viewform?fbclid=IwY2xjawH1Ok1leHRuA2FlbQIxMAABHVdl15rm5jPz5GzAFI3W95ZRkOJ3QLpeSB9NurorVM9KDcZqJxyjDvamFg_aem_RiVoFaQEp_0BR-Y5XMV_RQ" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf-ukBEfFMjiUunl6uppZhCIrpm9awe94pr5BpayGZ8wE6Ytg/viewform" 
               target="_blank" 
               rel="noopener noreferrer"
               className="font-figtree font-bold text-3xl text-mcgill-dark"
