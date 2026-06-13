@@ -3,10 +3,16 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
+// hide navbar only after scrolling past the hero-ish zone; ignore tiny jitters
+const SHOW_THRESHOLD = 120; // always visible within this many px of the top
+const SCROLL_DEADZONE = 10; // min delta before we flip direction (kills trackpad jitter)
+
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const lastScrollRef = useRef(0);
+  const tickingRef = useRef(false);
   const location = useLocation();
 
   // left nav links
@@ -24,13 +30,38 @@ const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
-  // hide navbar on scroll-down, show on scroll-up (always visible at top)
+  // hide on scroll-down, show on scroll-up — with a threshold + deadzone so the
+  // bar doesn't snap back on the slightest movement. rAF-throttled.
   useEffect(() => {
-    const handleScroll = () => {
+    lastScrollRef.current = window.scrollY;
+
+    const update = () => {
+      tickingRef.current = false;
       const currentY = window.scrollY;
-      if (currentY <= 80) setIsVisible(true);
-      else setIsVisible(currentY < lastScrollRef.current);
-      lastScrollRef.current = currentY;
+      const delta = currentY - lastScrollRef.current;
+
+      setScrolled(currentY > SHOW_THRESHOLD);
+
+      if (currentY <= SHOW_THRESHOLD) {
+        // near the top: always show
+        setIsVisible(true);
+      } else if (Math.abs(delta) > SCROLL_DEADZONE) {
+        // only react to a deliberate scroll, not jitter
+        setIsVisible(delta < 0);
+      }
+
+      // only advance the reference once we've moved beyond the deadzone,
+      // so slow drift accumulates instead of being swallowed every frame
+      if (currentY <= SHOW_THRESHOLD || Math.abs(delta) > SCROLL_DEADZONE) {
+        lastScrollRef.current = currentY;
+      }
+    };
+
+    const handleScroll = () => {
+      if (!tickingRef.current) {
+        tickingRef.current = true;
+        window.requestAnimationFrame(update);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -38,9 +69,13 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-16 flex justify-between items-center pointer-events-none bg-transparent transition-transform duration-300 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-16 flex justify-between items-center pointer-events-none transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 ease-premium ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        scrolled && !mobileMenuOpen
+          ? 'bg-mcgill-rose/70 backdrop-blur-md shadow-[0_1px_20px_rgba(17,17,17,0.06)]'
+          : 'bg-transparent'
       }`}
     >
       {/* desktop nav */}

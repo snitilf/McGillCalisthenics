@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flame, Dumbbell, Target, Sparkles, Trophy, Users, Medal, ExternalLink } from 'lucide-react';
+import Reveal from '../components/Reveal';
 
 const Competitions: React.FC = () => {
   const subdivisions = [
@@ -102,7 +103,7 @@ const Competitions: React.FC = () => {
             href="https://www.uscco.us/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-white rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300 max-w-2xl mx-auto border border-gray-100 hover:border-mcgill-red/20"
+            className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-white rounded-lg px-6 py-4 shadow-md hover:shadow-lg transition-all duration-300 ease-premium hover:-translate-y-0.5 max-w-2xl mx-auto border border-gray-100 hover:border-mcgill-red/20"
           >
             <img 
               src="/images/USCCO_Logo.svg" 
@@ -142,33 +143,32 @@ const Competitions: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {subdivisions.map((sub, index) => (
-              <div 
-                key={index}
-                className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* red accent border */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-                
-                <div className="p-4 sm:p-6">
-                  <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center mb-4">
-                    <sub.icon className="w-6 h-6 text-mcgill-red" />
+              <Reveal key={index} delay={index * 70} className="h-full">
+                <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
+                  {/* red accent border */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
+
+                  <div className="p-4 sm:p-6">
+                    <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center mb-4">
+                      <sub.icon className="w-6 h-6 text-mcgill-red" />
+                    </div>
+
+                    <h3
+                      className="text-xl font-bold text-mcgill-dark mb-2"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                    >
+                      {sub.name}
+                    </h3>
+
+                    <p
+                      className="text-sm text-gray-600 leading-relaxed"
+                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+                    >
+                      {sub.description}
+                    </p>
                   </div>
-                  
-                  <h3 
-                    className="text-xl font-bold text-mcgill-dark mb-2"
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                  >
-                    {sub.name}
-                  </h3>
-                  
-                  <p 
-                    className="text-sm text-gray-600 leading-relaxed"
-                    style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
-                  >
-                    {sub.description}
-                  </p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -194,35 +194,34 @@ const Competitions: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div 
-                key={index}
-                className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* red accent border */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-                
-                <div className="flex gap-4 p-4 sm:p-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center">
-                      <benefit.icon className="w-6 h-6 text-mcgill-red" />
+              <Reveal key={index} delay={index * 70} className="h-full">
+                <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
+                  {/* red accent border */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
+
+                  <div className="flex gap-4 p-4 sm:p-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-lg bg-mcgill-red/10 flex items-center justify-center">
+                        <benefit.icon className="w-6 h-6 text-mcgill-red" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3
+                        className="text-lg font-bold text-mcgill-dark mb-1"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                      >
+                        {benefit.title}
+                      </h3>
+                      <p
+                        className="text-sm text-gray-600 leading-relaxed"
+                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+                      >
+                        {benefit.description}
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <h3 
-                      className="text-lg font-bold text-mcgill-dark mb-1"
-                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                    >
-                      {benefit.title}
-                    </h3>
-                    <p 
-                      className="text-sm text-gray-600 leading-relaxed"
-                      style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
-                    >
-                      {benefit.description}
-                    </p>
-                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -249,38 +248,37 @@ const Competitions: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {commitments.map((commitment, index) => (
-                <div 
-                  key={index}
-                  className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  {/* McGill red accent border top */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-                  
-                  <div className="flex gap-4 p-4 sm:p-6">
-                    <div className="flex-shrink-0">
-                      <div 
-                        className="w-10 h-10 rounded-lg bg-mcgill-red/10 flex items-center justify-center text-mcgill-red font-bold text-sm"
-                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
-                      >
-                        {index + 1}
+                <Reveal key={index} delay={index * 70} className="h-full">
+                  <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
+                    {/* McGill red accent border top */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
+
+                    <div className="flex gap-4 p-4 sm:p-6">
+                      <div className="flex-shrink-0">
+                        <div
+                          className="w-10 h-10 rounded-lg bg-mcgill-red/10 flex items-center justify-center text-mcgill-red font-bold text-sm"
+                          style={{ fontFamily: 'Schibsted Grotesk, sans-serif' }}
+                        >
+                          {index + 1}
+                        </div>
+                      </div>
+                      <div>
+                        <h3
+                          className="text-base font-bold text-mcgill-dark mb-1"
+                          style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
+                        >
+                          {commitment.title}
+                        </h3>
+                        <p
+                          className="text-sm text-gray-600 leading-relaxed"
+                          style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
+                        >
+                          {commitment.description}
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <h3 
-                        className="text-base font-bold text-mcgill-dark mb-1"
-                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
-                      >
-                        {commitment.title}
-                      </h3>
-                      <p 
-                        className="text-sm text-gray-600 leading-relaxed"
-                        style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}
-                      >
-                        {commitment.description}
-                      </p>
-                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
