@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
         {/* mobile layout */}
         <div className="flex md:hidden flex-col items-center gap-3">
           <div className="flex items-center gap-4">
-            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Instagram size={20} /></a>
-            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Facebook size={20} /></a>
-            <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><MessageCircle size={20} /></a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Linkedin size={20} /></a>
-            <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Mail size={20} /></a>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Instagram size={20} /></a>
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Facebook size={20} /></a>
+            <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><MessageCircle size={20} /></a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Linkedin size={20} /></a>
+            <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Mail size={20} /></a>
           </div>
           <span 
             className="text-xs text-gray-500"
@@ -55,11 +55,11 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-mcgill-red">Connect</h4>
             <div className="flex space-x-4">
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Instagram size={24} /></a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Facebook size={24} /></a>
-              <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><MessageCircle size={24} /></a>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Linkedin size={24} /></a>
-              <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-colors p-1"><Mail size={24} /></a>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Instagram size={24} /></a>
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Facebook size={24} /></a>
+              <a href={SOCIAL_LINKS.messenger} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><MessageCircle size={24} /></a>
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Linkedin size={24} /></a>
+              <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-mcgill-dark hover:text-mcgill-red transition-all duration-200 ease-premium hover:-translate-y-0.5 p-1"><Mail size={24} /></a>
             </div>
             <span 
               className="text-xs text-gray-600"

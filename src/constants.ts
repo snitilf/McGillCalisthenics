@@ -1,4 +1,4 @@
-import { TeamMember, NavItem, WorkshopTopic } from './types';
+import { NavItem, WorkshopTopic } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -7,18 +7,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Competitions', path: '/competitions' },
   { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
-];
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  { id: '1', name: 'Noah Havrot-Landry', role: 'President', image: '/images/execs/Noah.webp' },
-  { id: '2', name: 'Charles Morin', role: 'VP Internal', image: '/images/execs/Charles.webp' },
-  { id: '3', name: 'Adrian Marinov', role: 'Co-VP External', image: '/images/execs/Adrian.webp' },
-  { id: '4', name: 'Louis Philippe Bejjani', role: 'Co-VP External', image: '/images/execs/Louis.webp' },
-  { id: '5', name: 'Filip Snítil', role: 'VP Tech', image: '/images/execs/Filip.webp' },
-  { id: '6', name: 'Natalia Andrea Lucena Henao', role: 'VP Finance', image: '/images/execs/Natalia.webp' },
-  { id: '7', name: 'Mia Desgagné', role: 'VP Communications', image: '/images/execs/Mia.webp' },
-  { id: '8', name: 'Katya Shubochkin', role: 'VP Operations & Logistics', image: '/images/execs/Katya.webp' },
-  { id: '9', name: 'Niko Vriniotis', role: 'Team Manager', image: '/images/execs/Niko.webp' },
 ];
 
 // modulo-based workshop topics (cycles through topics)

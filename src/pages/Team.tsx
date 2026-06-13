@@ -53,7 +53,7 @@ const TeamSection: React.FC<{ title: string; members: TeamMember[] }> = ({ title
         {members.map((member) => (
           <div
             key={member.id}
-            className="flex w-full flex-col items-center rounded-xl bg-white/40 p-4 sm:p-6 text-center shadow-lg sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+            className="flex w-full flex-col items-center rounded-xl bg-white/40 p-4 sm:p-6 text-center shadow-lg transition-all duration-300 ease-premium hover:-translate-y-1 hover:shadow-xl sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
           >
 
             <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
@@ -461,7 +461,7 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* team sections */}
+      {/* team sections (.animate-team-fade keyframes live in src/index.css) */}
       <section className="pb-2 bg-mcgill-rose">
         <div key={year} className="container mx-auto px-4 sm:px-6 max-w-7xl animate-team-fade">
           {teamGroups.map((group, index) => (
@@ -473,17 +473,6 @@ const Team: React.FC = () => {
           ))}
         </div>
       </section>
-
-      {/* fade-in when switching years */}
-      <style>{`
-        @keyframes teamFade {
-          from { opacity: 0; transform: translateY(12px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-team-fade {
-          animation: teamFade 0.4s ease-out both;
-        }
-      `}</style>
     </div>
   );
 };

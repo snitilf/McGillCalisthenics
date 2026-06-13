@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Clock, Users, Target, TrendingUp } from 'lucide-react';
 import { getWorkshopTopic } from '../constants';
 import { WeekDay } from '../types';
+import Reveal from '../components/Reveal';
 
 const Workshops: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -81,10 +82,11 @@ const Workshops: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Reveal delay={0} className="h-full">
+            <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
               {/* red accent border */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-              
+
               <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <Users className="w-8 h-8 text-mcgill-red" />
@@ -109,11 +111,13 @@ const Workshops: React.FC = () => {
                 </p>
               </div>
             </div>
+            </Reveal>
 
-            <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Reveal delay={80} className="h-full">
+            <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
               {/* red accent border */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-              
+
               <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <Target className="w-8 h-8 text-mcgill-red" />
@@ -138,11 +142,13 @@ const Workshops: React.FC = () => {
                 </p>
               </div>
             </div>
+            </Reveal>
 
-            <div className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Reveal delay={160} className="h-full">
+            <div className="group relative h-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-premium hover:-translate-y-1">
               {/* red accent border */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-mcgill-red"></div>
-              
+
               <div className="p-4 sm:p-6">
                 <div className="mb-4">
                   <TrendingUp className="w-8 h-8 text-mcgill-red" />
@@ -167,6 +173,7 @@ const Workshops: React.FC = () => {
                 </p>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </section>

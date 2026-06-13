@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '', 
   ...props 
 }) => {
-  const baseStyles = "relative inline-flex items-center justify-center px-8 py-3 font-bold uppercase tracking-wider transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed group overflow-hidden";
+  const baseStyles = "relative inline-flex items-center justify-center px-8 py-3 font-bold uppercase tracking-wider transition-all duration-300 ease-premium hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 group overflow-hidden";
   
   const variants = {
     primary: "bg-mcgill-red text-white hover:bg-white hover:text-mcgill-red border-2 border-mcgill-red",

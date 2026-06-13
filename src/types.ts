@@ -1,10 +1,3 @@
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  image: string;
-}
-
 export interface NavItem {
   label: string;
   path: string;

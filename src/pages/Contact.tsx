@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { scrollToTop } from '../hooks/useLenis';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -24,7 +25,7 @@ const Contact: React.FC = () => {
 
       if (data.success) {
         setIsSubmitted(true);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollToTop();
       } else {
         setError(true);
       }
