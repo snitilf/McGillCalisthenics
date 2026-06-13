@@ -6,10 +6,11 @@ The official website for the McGill University Calisthenics Club — a student-l
 
 - **React 19** with TypeScript
 - **Vite** for fast development and builds
-- **Tailwind CSS** for styling
-- **React Router** for navigation
-- **GSAP** for animations
+- **Tailwind CSS v3** (PostCSS build) for styling
+- **React Router** (HashRouter) for navigation
+- **Lenis** for smooth scrolling + scroll-reveal animations
 - **Lucide React** for icons
+- **sharp** for build-time image optimization
 
 ## Getting Started
 
@@ -46,24 +47,34 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Recompress/resize the .webp images in public/images (idempotent)
+npm run optimize:images
 ```
 
 ## Project Structure
 
 ```
-├── public/              # Static assets
-│   └── images/          # Images and media
-├── src/                 # Source code
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Page components
-│   ├── App.tsx          # Root component with routing
-│   ├── main.tsx         # Application entry point
-│   ├── constants.ts     # App constants and data
-│   └── types.ts         # TypeScript definitions
-├── index.html           # HTML entry point
-├── vite.config.ts       # Vite configuration
-├── tsconfig.json        # TypeScript configuration
-└── vercel.json          # Vercel deployment config
+├── public/                  # Static assets
+│   ├── images/              # Images and media (.webp)
+│   └── signature/           # Email-signature asset
+├── scripts/
+│   └── optimize-images.mjs  # sharp-based .webp optimizer (npm run optimize:images)
+├── src/                     # Source code
+│   ├── components/          # Reusable UI components (Navbar, Footer, Reveal, …)
+│   ├── hooks/               # Custom hooks (useLenis — smooth scroll)
+│   ├── pages/               # Page components
+│   ├── App.tsx              # Root component with routing
+│   ├── main.tsx             # Application entry point (imports index.css)
+│   ├── index.css            # Tailwind directives + custom CSS layers
+│   ├── constants.ts         # App constants and data
+│   └── types.ts             # TypeScript definitions
+├── index.html               # HTML entry point
+├── tailwind.config.js       # Tailwind theme/tokens
+├── postcss.config.js        # PostCSS (tailwindcss + autoprefixer)
+├── vite.config.ts           # Vite configuration
+├── tsconfig.json            # TypeScript configuration
+└── vercel.json              # Vercel deployment config
 ```
 
 ## Environment Variables
@@ -93,5 +104,4 @@ This project is maintained by the McGill Calisthenics Club executive team.
 ## Connect
 
 - [Instagram](https://www.instagram.com/mcgillcalisthenics/)
-- [Facebook](https://www.facebook.com/people/McGill-Calisthenics-Club/61571444662955/)
 - Email: calisthenics.vpcommunications@mcgilleus.ca
