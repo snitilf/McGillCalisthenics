@@ -83,7 +83,10 @@ const FAQ: React.FC = () => {
                 >
                   <button
                     onClick={() => toggleQuestion(index)}
-                    className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-trigger-${index}`}
+                    className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2"
                   >
                     <h3 
                       className={`text-base md:text-lg font-bold pr-6 transition-colors duration-300 ${
@@ -111,7 +114,10 @@ const FAQ: React.FC = () => {
                     </div>
                   </button>
                   
-                  <div 
+                  <div
+                    id={`faq-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${index}`}
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}

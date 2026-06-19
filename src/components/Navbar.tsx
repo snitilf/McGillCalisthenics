@@ -70,6 +70,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
+      aria-label="Primary"
       className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-16 flex justify-between items-center pointer-events-none transition-[transform,background-color,box-shadow,backdrop-filter] duration-300 ease-premium ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
@@ -86,11 +87,11 @@ const Navbar: React.FC = () => {
             <NavLink
               key={link.path}
               to={link.path}
-              className={({ isActive }) => 
-                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
+              className={({ isActive }) =>
+                `nav-link font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
                   link.label === 'FAQ' ? 'uppercase' : ''
                 } ${
-                  isActive ? 'text-mcgill-red' : ''
+                  isActive ? 'text-mcgill-red is-active' : ''
                 }`}
               style={{
                 fontFamily: 'Schibsted Grotesk, sans-serif',
@@ -121,11 +122,11 @@ const Navbar: React.FC = () => {
             <NavLink
               key={link.path}
               to={link.path}
-              className={({ isActive }) => 
-                `font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
+              className={({ isActive }) =>
+                `nav-link font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide ${
                   link.label === 'FAQ' ? 'uppercase' : ''
                 } ${
-                  isActive ? 'text-mcgill-red' : ''
+                  isActive ? 'text-mcgill-red is-active' : ''
                 }`}
               style={{
                 fontFamily: 'Schibsted Grotesk, sans-serif',
@@ -138,8 +139,8 @@ const Navbar: React.FC = () => {
           <a 
             href="https://docs.google.com/forms/d/e/1FAIpQLSf-ukBEfFMjiUunl6uppZhCIrpm9awe94pr5BpayGZ8wE6Ytg/viewform" 
             target="_blank" 
-            rel="noopener noreferrer" 
-            className="font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide"
+            rel="noopener noreferrer"
+            className="nav-link font-figtree font-bold text-mcgill-dark hover:text-mcgill-red transition-colors text-xl tracking-wide"
             style={{
               fontFamily: 'Schibsted Grotesk, sans-serif',
               fontWeight: 700,
@@ -161,9 +162,12 @@ const Navbar: React.FC = () => {
             height="32"
           />
         </Link>
-        <button 
-          className="text-mcgill-dark pointer-events-auto"
+        <button
+          className="text-mcgill-dark pointer-events-auto rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -171,7 +175,8 @@ const Navbar: React.FC = () => {
 
       {/* mobile menu overlay */}
       {mobileMenuOpen && (
-        <div 
+        <div
+          id="mobile-menu"
           className="absolute top-0 left-0 w-full min-h-[100dvh] bg-mcgill-rose/70 backdrop-blur-sm z-40 flex flex-col items-center justify-center gap-8 pointer-events-auto"
           onClick={() => setMobileMenuOpen(false)}
         >

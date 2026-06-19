@@ -73,7 +73,10 @@ const Home: React.FC = () => {
                 >
                   <button
                     onClick={() => toggleAccordion(section.id)}
-                    className="w-full px-4 py-4 flex items-center justify-between text-left"
+                    aria-expanded={isOpen}
+                    aria-controls={`home-panel-${section.id}`}
+                    id={`home-trigger-${section.id}`}
+                    className="w-full px-4 py-4 flex items-center justify-between text-left rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2"
                   >
                     <h3 
                       className={`text-lg font-bold pr-4 transition-colors duration-300 ${
@@ -101,7 +104,10 @@ const Home: React.FC = () => {
                     </div>
                   </button>
                   
-                  <div 
+                  <div
+                    id={`home-panel-${section.id}`}
+                    role="region"
+                    aria-labelledby={`home-trigger-${section.id}`}
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
@@ -139,11 +145,13 @@ const Home: React.FC = () => {
                 {activeTab === 'community' && Array.isArray(tabImages[activeTab]) ? (
                   <div className="w-full h-full flex flex-col gap-0">
                     {tabImages[activeTab].map((img, idx) => (
-                      <img 
+                      <img
                         key={idx}
-                        src={img} 
-                        alt="Community" 
-                        className="w-full h-1/2 object-cover transition-all duration-500" 
+                        src={img}
+                        alt="McGill Calisthenics members training together"
+                        className="w-full h-1/2 object-cover transition-all duration-500"
+                        loading="lazy"
+                        decoding="async"
                       />
                     ))}
                   </div>
@@ -151,8 +159,9 @@ const Home: React.FC = () => {
                   <img 
                     src={typeof tabImages[activeTab] === 'string' ? tabImages[activeTab] : tabImages[activeTab][0]} 
                     alt={activeTab === 'about' ? 'Logo' : activeTab === 'philosophy' ? 'Handstand' : 'Community'} 
-                    className="w-full h-full object-cover transition-all duration-500" 
+                    className="w-full h-full object-cover transition-all duration-500"
                     loading="lazy"
+                    decoding="async"
                   />
                 )}
               </div>
@@ -162,12 +171,16 @@ const Home: React.FC = () => {
             <div className="lg:w-2/3">
               <div className="aspect-[2/1] flex flex-col overflow-hidden">
                 {/* tabs - fixed height */}
-                <div className="flex-shrink-0 flex flex-wrap gap-4 sm:gap-8 mb-5">
+                <div role="tablist" aria-label="About the club" className="flex-shrink-0 flex flex-wrap gap-4 sm:gap-8 mb-5">
                   {(['about', 'philosophy', 'community'] as const).map((tab) => (
                     <button
                       key={tab}
+                      role="tab"
+                      id={`home-tab-${tab}`}
+                      aria-selected={activeTab === tab}
+                      aria-controls={`home-tabpanel-${tab}`}
                       onClick={() => setActiveTab(tab)}
-                      className={`pb-3 text-xl tracking-wide transition-all duration-300 relative font-figtree ${
+                      className={`pb-3 text-xl tracking-wide transition-all duration-300 relative font-figtree focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2 rounded-sm ${
                         activeTab === tab ? 'text-mcgill-red' : 'text-gray-600 hover:text-mcgill-dark'
                       }`}
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
@@ -186,7 +199,7 @@ const Home: React.FC = () => {
                 {/* content - fills remaining space with scroll if needed */}
                 <div className="flex-1 overflow-y-auto min-h-0">
                   {activeTab === 'about' && (
-                    <div className="animate-fade-in space-y-4">
+                    <div role="tabpanel" id="home-tabpanel-about" aria-labelledby="home-tab-about" className="animate-fade-in space-y-4">
                       <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
                         Founded in 2024, McGill Calisthenics is a student-led community dedicated to bodyweight training, skill development, and accessible fitness for all levels. We welcome everyone from complete beginners to advanced athletes looking to refine their craft.
                       </p>
@@ -199,7 +212,7 @@ const Home: React.FC = () => {
                     </div>
                   )}
                   {activeTab === 'philosophy' && (
-                    <div className="animate-fade-in space-y-4">
+                    <div role="tabpanel" id="home-tabpanel-philosophy" aria-labelledby="home-tab-philosophy" className="animate-fade-in space-y-4">
                       <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
                         Every session begins with a thorough full-body warm-up designed to prepare your joints, tendons, and nervous system. We mobilize, activate, and groove key movement patterns so you feel ready and minimize injury risk.
                       </p>
@@ -212,7 +225,7 @@ const Home: React.FC = () => {
                     </div>
                   )}
                   {activeTab === 'community' && (
-                    <div className="animate-fade-in space-y-4">
+                    <div role="tabpanel" id="home-tabpanel-community" aria-labelledby="home-tab-community" className="animate-fade-in space-y-4">
                       <p className="text-lg text-gray-600 leading-relaxed font-figtree" style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 600 }}>
                         This club is about lifting each other up. We show up, put in the work, and motivate one another to improve every week. Progress is more fun and sustainable when you have a supportive team behind you.
                       </p>

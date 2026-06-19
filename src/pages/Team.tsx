@@ -136,8 +136,8 @@ const TEAM_2026_2027: TeamGroup[] = [
         role: 'VP Internal',
         image: '/images/execs/Charles.webp',
         offsetX: 50,
-        offsetY: 55,
-        zoom: 1,
+        offsetY: 50,
+        zoom: 1.5,
       },
       {
         id: 'jo-2627',
@@ -223,15 +223,6 @@ const TEAM_2026_2027: TeamGroup[] = [
     title: 'Coaching Team',
     members: [
       {
-        id: 'alek-2627',
-        name: 'Alek Tanev',
-        role: 'Co-Founder & Coach',
-        image: '/images/execs/Alek.webp',
-        offsetX: 50,
-        offsetY: 50,
-        zoom: 1,
-      },
-      {
         id: 'khalid-2627',
         name: 'Hassan-Khalid Zakaryaa',
         role: 'Coach',
@@ -273,8 +264,8 @@ const TEAM_2025_2026: TeamGroup[] = [
         role: 'VP Internal',
         image: '/images/execs/Charles.webp',
         offsetX: 50,
-        offsetY: 55,
-        zoom: 1,
+        offsetY: 50,
+        zoom: 1.5,
       },
       {
         id: '6',
@@ -311,7 +302,7 @@ const TEAM_2025_2026: TeamGroup[] = [
       {
         id: '5',
         name: 'Filip Snítil',
-        role: 'VP Tech',
+        role: 'VP Technology',
         image: '/images/execs/Filip.webp',
         offsetX: 110,
         offsetY: 10,

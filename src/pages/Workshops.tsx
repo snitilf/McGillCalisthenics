@@ -216,9 +216,10 @@ const Workshops: React.FC = () => {
                   </p>
                 </div>
                 <div className="relative w-full flex-1 min-h-[300px] lg:min-h-[450px]">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.838795015198!2d-73.55405329999999!3d45.493190899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b9d2a54417b%3A0x70b904106b910831!2sDe%20la%20Commune%20outdoor%20gym!5e0!3m2!1sen!2sca!4v1766438721710!5m2!1sen!2sca" 
-                    width="100%" 
+                  <iframe
+                    title="Map of De la Commune outdoor gym, Montreal"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.838795015198!2d-73.55405329999999!3d45.493190899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b9d2a54417b%3A0x70b904106b910831!2sDe%20la%20Commune%20outdoor%20gym!5e0!3m2!1sen!2sca!4v1766438721710!5m2!1sen!2sca"
+                    width="100%"
                     height="100%" 
                     style={{border:0}} 
                     allowFullScreen={true} 
@@ -272,11 +273,18 @@ const Workshops: React.FC = () => {
                   ))}
                   {calendarDays.map((d, i) => {
                     const isSelected = selectedDate?.getDate() === d.day && selectedDate?.getMonth() === currentMonth;
+                    const ariaLabel = !d.day
+                      ? undefined
+                      : d.isSunday
+                        ? `Sunday, ${monthNames[currentMonth]} ${d.day} — workshop: ${getWorkshopTopic(new Date(currentYear, currentMonth, d.day))}`
+                        : `${monthNames[currentMonth]} ${d.day}`;
                     return (
                       <button
                         key={i}
                         disabled={!d.day || !d.isSunday}
                         onClick={() => d.day && handleDayClick(d.day)}
+                        aria-label={ariaLabel}
+                        aria-pressed={d.isSunday ? isSelected : undefined}
                         className={`
                           aspect-square min-h-[40px] flex items-center justify-center text-xs sm:text-sm font-bold rounded-lg transition-all
                           ${!d.day ? 'invisible' : ''}
@@ -307,7 +315,7 @@ const Workshops: React.FC = () => {
                 </p>
 
                 {/* selected date info */}
-                <div className="bg-mcgill-rose p-4 rounded-xl border border-gray-200 shadow-sm min-h-[120px] flex flex-col justify-center">
+                <div aria-live="polite" className="bg-mcgill-rose p-4 rounded-xl border border-gray-200 shadow-sm min-h-[120px] flex flex-col justify-center">
                   {selectedDate ? (
                     <div className="animate-fade-in">
                       <h4 

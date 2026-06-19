@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                     <input 
                       type="text"
                       name="name"
-                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red focus-visible:ring-2 focus-visible:ring-mcgill-red/40 rounded-sm transition-colors text-base"
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="Arnold Schwarzenegger" 
                       required 
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                     <input 
                       type="email"
                       name="email"
-                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red focus-visible:ring-2 focus-visible:ring-mcgill-red/40 rounded-sm transition-colors text-base"
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="arnold@mail.mcgill.ca" 
                       required 
@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
                     <input 
                       type="text"
                       name="form_subject"
-                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red transition-colors text-base" 
+                      className="w-full border-b-2 border-gray-200 bg-transparent py-3 focus:outline-none focus:border-mcgill-red focus-visible:ring-2 focus-visible:ring-mcgill-red/40 rounded-sm transition-colors text-base"
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="Workshop Inquiry" 
                       required 
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                     <textarea 
                       name="message"
                       rows={5} 
-                      className="w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-lg focus:outline-none focus:border-mcgill-red transition-colors text-base resize-none" 
+                      className="w-full border-2 border-gray-100 bg-gray-50 p-4 rounded-lg focus:outline-none focus:border-mcgill-red focus-visible:ring-2 focus-visible:ring-mcgill-red/40 transition-colors text-base resize-none"
                       style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 500 }}
                       placeholder="How can we help you?" 
                       required
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                   </div>
 
                   {error && (
-                    <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
+                    <div id="form-error" role="alert" className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg">
                       <AlertCircle className="w-5 h-5 flex-shrink-0" />
                       <p 
                         className="text-sm"
@@ -151,10 +151,11 @@ const Contact: React.FC = () => {
                     </div>
                   )}
 
-                  <button 
+                  <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                    aria-describedby={error ? 'form-error' : undefined}
+                    className="w-full bg-mcgill-red text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-mcgill-dark transition-all duration-300 rounded-lg disabled:opacity-70 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-mcgill-red focus-visible:ring-offset-2"
                     style={{ fontFamily: 'Schibsted Grotesk, sans-serif', fontWeight: 700 }}
                   >
                     <span className="inline-flex items-center justify-center">

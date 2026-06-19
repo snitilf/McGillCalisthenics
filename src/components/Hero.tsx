@@ -15,10 +15,10 @@ const Hero: React.FC = () => {
         className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-full md:w-[35%] lg:w-[30%]"
         style={{ height: '100%' }}
       >
-         <img 
-            src="/images/mcgillflag.webp" 
+         <img
+            src="/images/mcgillflag.webp"
             alt="McGill Calisthenics"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-hero-zoom"
             loading="eager"
             fetchPriority="high"
             decoding="async"
